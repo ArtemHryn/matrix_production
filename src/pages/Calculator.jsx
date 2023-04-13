@@ -9,13 +9,12 @@ import navigationListCalc from 'components/CalculatorPageComponents/navigationLi
 import Contacts from 'components/CalculatorPageComponents/Contacts/Contacts';
 import GetPDFTemplate from 'components/CalculatorPageComponents/GetPDFTemplate/GetPDFTemplate';
 import Footer from 'components/CalculatorPageComponents/Footer/Footer';
-import { Box } from 'components/Box';
+import ScrollToTop from 'components/Common/ScrollToTop';
+import { CalcContainer } from 'components/Common/Common.styled';
 
 const MatrixContext = createContext();
 export const useMatrix = () => useContext(MatrixContext);
 
-const calculatorPageGradient =
-  'linear-gradient(180deg, #FDFCFE 0%, #E7E0F3 13.01%, #ECE6F6 25.18%, #EDE1F4 36.71%, #F5E8F3 47.22%, #F6ECF5 54.89%, #F4ECFA 71.18%, #F4EBF9 79.3%, #F7EDF8 88.76%, #F7EBF6 100%);';
 
 const Calculator = () => {
   const [showMatrix, setShowMatrix] = useState(false);
@@ -23,6 +22,7 @@ const Calculator = () => {
   const [isGenerated, setIsGenerated] = useState(false);
   const [name, setName] = useState('');
   const [matrixData, setMatrixData] = useState({});
+  const [matrixType, setMatrixType] = useState('fateMatrix');
 
   return (
     <MatrixContext.Provider
@@ -37,9 +37,12 @@ const Calculator = () => {
         setName,
         matrixData,
         setMatrixData,
+        matrixType,
+        setMatrixType,
       }}
     >
-      <Box backgroundImage={calculatorPageGradient}>
+      <ScrollToTop />
+      <CalcContainer>
         <Header navigationList={navigationListCalc} />
         <Hero />
         <Outlet />
@@ -48,7 +51,7 @@ const Calculator = () => {
         <Contacts />
         <GetPDFTemplate />
         <Footer />
-      </Box>
+      </CalcContainer>
     </MatrixContext.Provider>
   );
 };
