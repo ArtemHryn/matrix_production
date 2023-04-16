@@ -16,7 +16,6 @@ import { MatrixPlusAndMinus } from 'components/MainPageComponents/MatrixPlusAndM
 import { Header } from 'components/MainPageComponents/Header/Header';
 import navigationList from 'components/MainPageComponents/Header/navigationList';
 import { useLocation, useNavigate } from 'react-router-dom';
-import ScrollToTop from 'components/Common/ScrollToTop';
 
 const imgLink = `url(${backgroundFooterImage})`;
 
@@ -31,9 +30,9 @@ const Main = () => {
       navigate('/', { replace: true });
     }
   }, [location, navigate]);
+
   return (
     <>
-      <ScrollToTop />
       <Box backgroundImage="linear-gradient(to bottom,rgba(158, 118, 255, 0.18) 50%,#fff)">
         <Header navigationList={navigationList} />
         <MainHero />

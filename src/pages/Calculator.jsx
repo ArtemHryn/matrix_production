@@ -1,28 +1,35 @@
-import { createContext, useContext, useState } from 'react';
-import { Outlet } from 'react-router-dom';
-import { Header } from 'components/MainPageComponents/Header/Header';
-import { Hero } from 'components/CalculatorPageComponents/Hero/Hero';
-import { ChangeYourFate } from 'components/CalculatorPageComponents/ChangeYourFate/ChangeYourFate';
-import Donation from 'components/CalculatorPageComponents/Donation/Donation';
+import { createContext, useContext, useEffect, useState } from "react";
+import { Outlet } from "react-router-dom";
 
-import navigationListCalc from 'components/CalculatorPageComponents/navigationLisCalc';
-import Contacts from 'components/CalculatorPageComponents/Contacts/Contacts';
-import GetPDFTemplate from 'components/CalculatorPageComponents/GetPDFTemplate/GetPDFTemplate';
-import Footer from 'components/CalculatorPageComponents/Footer/Footer';
-import ScrollToTop from 'components/Common/ScrollToTop';
-import { CalcContainer } from 'components/Common/Common.styled';
+import { Header } from "components/MainPageComponents/Header/Header";
+import { Hero } from "components/CalculatorPageComponents/Hero/Hero";
+import { ChangeYourFate } from "components/CalculatorPageComponents/ChangeYourFate/ChangeYourFate";
+import Donation from "components/CalculatorPageComponents/Donation/Donation";
+import Contacts from "components/CalculatorPageComponents/Contacts/Contacts";
+import GetPDFTemplate from "components/CalculatorPageComponents/GetPDFTemplate/GetPDFTemplate";
+import Footer from "components/CalculatorPageComponents/Footer/Footer";
+
+import { CalcContainer } from "components/Common/Common.styled";
+
+import navigationListCalc from "components/CalculatorPageComponents/navigationLisCalc";
+import { content } from "helper/content";
 
 const MatrixContext = createContext();
 export const useMatrix = () => useContext(MatrixContext);
-
 
 const Calculator = () => {
   const [showMatrix, setShowMatrix] = useState(false);
   const [date, setDate] = useState({});
   const [isGenerated, setIsGenerated] = useState(false);
-  const [name, setName] = useState('');
+  const [name, setName] = useState("");
   const [matrixData, setMatrixData] = useState({});
-  const [matrixType, setMatrixType] = useState('fateMatrix');
+  const [matrixType, setMatrixType] = useState("fateMatrix");
+
+  useEffect(() => {
+    const metaTag = document.querySelector('meta[name="description"]');
+    document.title = "Dari.Karma | Калькулятор Матрицы Судьбы";
+    metaTag.setAttribute("content", content);
+  }, []);
 
   return (
     <MatrixContext.Provider
@@ -41,7 +48,6 @@ const Calculator = () => {
         setMatrixType,
       }}
     >
-      <ScrollToTop />
       <CalcContainer>
         <Header navigationList={navigationListCalc} />
         <Hero />
