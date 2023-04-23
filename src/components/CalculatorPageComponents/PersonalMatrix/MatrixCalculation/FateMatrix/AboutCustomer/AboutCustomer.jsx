@@ -1,13 +1,13 @@
-import React, { useEffect } from 'react';
-import { Box } from 'components/Box';
-import { useMatrix } from 'pages/Calculator';
+import React, { useEffect } from "react";
+import { Box } from "components/Box";
+import { useMatrix } from "pages/Calculator";
 
-import star from 'images/Calculator/personalMatrix/star.webp';
-import { Img, Info, Key, NameDate } from './AboutCustomer.styled';
-import { checkNum } from 'helper/calculateMatrix';
+import star from "images/Calculator/personalMatrix/star.webp";
+import { Img, Info, Key, NameDate } from "./AboutCustomer.styled";
+import { checkNum } from "helper/calculateMatrix";
 
 const gradient =
-  'linear-gradient(180deg, rgba(255, 255, 255, 0.5) 0%, rgba(249, 237, 255, 0.5) 100%);';
+  "linear-gradient(180deg, rgba(255, 255, 255, 0.5) 0%, rgba(249, 237, 255, 0.5) 100%);";
 
 const AboutCustomer = () => {
   const {
@@ -25,9 +25,20 @@ const AboutCustomer = () => {
     if (!ageList) {
       return;
     }
-    const result = ageList.findIndex(
-      element => element.age > years + months / 12
-    );
+    const totalAge = years + months / 12;
+    if (totalAge > 78.5 && totalAge <= 80) {
+      setCurrentKey(
+        `${ageList[63].arcane} - ${ageList[31].arcane} - ${checkNum(
+          ageList[63].arcane + ageList[31].arcane
+        )}`
+      );
+      return;
+    }
+    const result = ageList.findIndex((element) => element.age > totalAge);
+    if (result === -1) {
+      setCurrentKey(null);
+      return;
+    }
     const firstKey = ageList[result - 1].arcane;
     if (result <= 32) {
       setCurrentKey(
@@ -45,11 +56,11 @@ const AboutCustomer = () => {
   }, [ageList, months, setCurrentKey, years]);
 
   return (
-    <Box display={[null, null, 'none']} mb={['50px', '70px']}>
+    <Box display={[null, null, "none"]} mb={["50px", "70px"]}>
       <Box
         backgroundImage={gradient}
-        py={['18px']}
-        px={['33px']}
+        py={["18px"]}
+        px={["33px"]}
         position="relative"
         overflow="hidden"
         borderRadius="17px"
@@ -57,25 +68,27 @@ const AboutCustomer = () => {
       >
         {!isGenerated && (
           <>
-            {' '}
+            {" "}
             <Box display="flex" justifyContent="center" alignItems="center">
               {name && (
-                <NameDate mr="6px" fontFamily={'main'} fontWeight="700">
+                <NameDate mr="6px" fontFamily={"main"} fontWeight="700">
                   {name}
                 </NameDate>
-              )}{' '}
+              )}{" "}
               <NameDate>
                 {day}.{month}.{year}
               </NameDate>
             </Box>
             <Box display="flex" justifyContent="center" gridGap="15px">
               <Key>
-                Возраст: <Info>{years}</Info>{' '}
+                Возраст: <Info>{years}</Info>{" "}
               </Key>
 
-              <Key>
-                Период: <Info>{currentKey}</Info>
-              </Key>
+              {currentKey && (
+                <Key>
+                  Период: <Info>{currentKey}</Info>
+                </Key>
+              )}
             </Box>
           </>
         )}
