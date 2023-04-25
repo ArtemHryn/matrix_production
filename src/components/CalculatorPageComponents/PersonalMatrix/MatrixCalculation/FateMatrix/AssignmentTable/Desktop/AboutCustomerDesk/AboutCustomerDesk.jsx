@@ -24,8 +24,8 @@ const AboutCustomerDesk = () => {
   return (
     <Box
       mb="10px"
-      py={["20px"]}
-      px={["25px"]}
+      py={['20px']}
+      px={['25px']}
       borderRadius="17px"
       border="0.8px solid #72499B"
       backgroundImage={gradient}
@@ -36,26 +36,26 @@ const AboutCustomerDesk = () => {
             {name && (
               <NameDate
                 mr="6px"
-                fontSize={[null, null, "27px"]}
-                fontFamily={[null, null, "main"]}
-                fontWeight={[null, null, "700"]}
+                fontSize={[null, null, '27px']}
+                fontFamily={[null, null, 'main']}
+                fontWeight={[null, null, '700']}
               >
                 {name}
               </NameDate>
             )}
           </>
         )}
-        <NameDate fontSize={[null, null, "27px"]}>
+        <NameDate fontSize={[null, null, '27px']}>
           {day}.{month}.{year}
         </NameDate>
       </Box>
       <Box display="flex" justifyContent="space-evenly">
         <Key>
-          Возраст: <Info fontSize={[null, null, "17px"]}>{years}</Info>
+          Возраст: <Info fontSize={[null, null, '17px']}>{years}</Info>
         </Key>
         {currentKey && (
           <Key>
-            Период: <Info fontSize={[null, null, "17px"]}>{currentKey}</Info>
+            Период: <Info fontSize={[null, null, '17px']}>{currentKey}</Info>
           </Key>
         )}
       </Box>

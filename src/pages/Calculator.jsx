@@ -1,4 +1,10 @@
-import { createContext, useContext, useEffect, useState } from 'react';
+import {
+  Suspense,
+  createContext,
+  useContext,
+  useEffect,
+  useState,
+} from 'react';
 import { Outlet } from 'react-router-dom';
 import { Header } from 'components/MainPageComponents/Header/Header';
 import { Hero } from 'components/CalculatorPageComponents/Hero/Hero';
@@ -12,6 +18,7 @@ import { CalcContainer } from 'components/Common/Common.styled';
 
 import navigationListCalc from 'components/CalculatorPageComponents/navigationLisCalc';
 import { content } from 'helper/content';
+import { Spinner } from 'components/Spinner/Spinner';
 
 const MatrixContext = createContext();
 export const useMatrix = () => useContext(MatrixContext);
@@ -26,6 +33,7 @@ const Calculator = () => {
   const [ageList, setAgeList] = useState(null);
   const [age, setAge] = useState({});
   const [currentKey, setCurrentKey] = useState('');
+  const [partnersDate, setPartnersDate] = useState([]);
 
   useEffect(() => {
     const metaTag = document.querySelector('meta[name="description"]');
@@ -54,12 +62,16 @@ const Calculator = () => {
         setAge,
         currentKey,
         setCurrentKey,
+        partnersDate,
+        setPartnersDate,
       }}
     >
       <CalcContainer>
         <Header navigationList={navigationListCalc} />
         <Hero />
-        <Outlet />
+        <Suspense fallback={<Spinner />}>
+          <Outlet />
+        </Suspense>
         <ChangeYourFate />
         <Donation />
         <Contacts />

@@ -1,9 +1,9 @@
-import { ageArcanesList } from "./positionLists";
+import { ageArcanesList } from './positionLists';
 
 export function checkNum(num) {
   if (+num > 22) {
     return String(num)
-      .split("")
+      .split('')
       .reduce((acc, number) => {
         return acc + +number;
       }, 0);
@@ -15,8 +15,8 @@ export function allData(date, isGenerated) {
   const data = {
     ...date,
   };
-  Object.keys(data).forEach((element) => {
-    if (element === "year") {
+  Object.keys(data).forEach(element => {
+    if (element === 'year') {
       data[element] = checkNum(checkNum(data[element]));
       return;
     }
@@ -93,7 +93,7 @@ export function allData(date, isGenerated) {
   return data;
 }
 
-export const getKarmaIssueData = (info) => {
+export const getKarmaIssueData = info => {
   const {
     year,
     month,
@@ -118,28 +118,28 @@ export const getKarmaIssueData = (info) => {
   } = info;
   const data = [
     {
-      karmaName: "Внешняя карма",
+      karmaName: 'Внешняя карма',
       info: [
         {
-          type: "Личная",
+          type: 'Личная',
           energyInfo: [
-            { name: "Личностная карма", energy: day },
-            { name: "Духовная карма", energy: month },
-            { name: "Карма здоровья и материальных результатов", energy: year },
-            { name: "Карма прошлой жизни и древней мудрости", energy: bottom1 },
+            { name: 'Личностная карма', energy: day },
+            { name: 'Духовная карма', energy: month },
+            { name: 'Карма здоровья и материальных результатов', energy: year },
+            { name: 'Карма прошлой жизни и древней мудрости', energy: bottom1 },
           ],
         },
         {
-          type: "Родовая",
+          type: 'Родовая',
           energyInfo: [
-            { name: "Духовная карма рода отца", energy: topLeft1 },
-            { name: "Духовная карма рода матери", energy: topRight1 },
+            { name: 'Духовная карма рода отца', energy: topLeft1 },
+            { name: 'Духовная карма рода матери', energy: topRight1 },
             {
-              name: "Сакрально-генетическая карма рода матери",
+              name: 'Сакрально-генетическая карма рода матери',
               energy: bottomLeft1,
             },
             {
-              name: "Сакрально-генетическая карма рода отца",
+              name: 'Сакрально-генетическая карма рода отца',
               energy: bottomRight1,
             },
           ],
@@ -147,56 +147,56 @@ export const getKarmaIssueData = (info) => {
       ],
     },
     {
-      karmaName: "Внутреняя карма",
+      karmaName: 'Внутреняя карма',
       info: [
         {
-          type: "Личная",
+          type: 'Личная',
           energyInfo: [
-            { name: "Детско-родительская карма", energy: left3 },
-            { name: "Личная творческая карма", energy: top3 },
-            { name: "Денежно-материальная карма", energy: right3 },
+            { name: 'Детско-родительская карма', energy: left3 },
+            { name: 'Личная творческая карма', energy: top3 },
+            { name: 'Денежно-материальная карма', energy: right3 },
             {
-              name: "Карма партнерских сексуальных отношений",
+              name: 'Карма партнерских сексуальных отношений',
               energy: bottom3,
             },
           ],
         },
         {
-          type: "Родовая",
+          type: 'Родовая',
           energyInfo: [
-            { name: "Творческая карма рода отца", energy: topLeft3 },
-            { name: "Творческая карма рода матери", energy: topRight3 },
-            { name: "Партнёрская карма рода матери", energy: bottomRight3 },
-            { name: "Партнёрская карма рода отца", energy: bottomLeft3 },
+            { name: 'Творческая карма рода отца', energy: topLeft3 },
+            { name: 'Творческая карма рода матери', energy: topRight3 },
+            { name: 'Партнёрская карма рода матери', energy: bottomRight3 },
+            { name: 'Партнёрская карма рода отца', energy: bottomLeft3 },
           ],
         },
       ],
     },
     {
-      karmaName: "Ключи внутренней матрицы",
+      karmaName: 'Ключи внутренней матрицы',
       info: [
         {
-          type: "Деньги",
+          type: 'Деньги',
           energyInfo: [
             {
-              name: "Карма творчества и денег",
+              name: 'Карма творчества и денег',
               energy: `${right3} - ${top3} - ${innerTopRight}`,
             },
             {
-              name: "Карма партнёрства и процветания",
+              name: 'Карма партнёрства и процветания',
               energy: `${bottom3} - ${right3} - ${innerBottomRight}`,
             },
           ],
         },
         {
-          type: "Семья",
+          type: 'Семья',
           energyInfo: [
             {
-              name: "Карма семейного творчества",
+              name: 'Карма семейного творчества',
               energy: `${left3} - ${top3} - ${innerTopLeft}`,
             },
             {
-              name: "Карма замужества и создания семьи",
+              name: 'Карма замужества и создания семьи',
               energy: `${bottom3} - ${left3} - ${innerBottomLeft}`,
             },
           ],
@@ -207,7 +207,7 @@ export const getKarmaIssueData = (info) => {
   return data;
 };
 
-export const getHealthInfo = (info) => {
+export const getHealthInfo = info => {
   const {
     day,
     month,
@@ -261,92 +261,92 @@ export const getHealthInfo = (info) => {
   }, 0);
   const list = [
     {
-      cardName: "Личная карта здоровья",
-      columnName: ["Физика", "Энергия", "Эмоции"],
+      cardName: 'Личная карта здоровья',
+      columnName: ['Физика', 'Энергия', 'Эмоции'],
       chakraList: [
         {
-          chakraName: "Сахасрара",
+          chakraName: 'Сахасрара',
           physics: day,
           energy: month,
-          emotions: "20",
-          color: "#DCB9FF",
+          emotions: '20',
+          color: '#DCB9FF',
         },
         {
-          chakraName: "Аджна",
+          chakraName: 'Аджна',
           physics: left2,
           energy: top2,
-          emotions: "20",
-          color: "#B9C0FF",
+          emotions: '20',
+          color: '#B9C0FF',
         },
         {
-          chakraName: "Вишудха",
+          chakraName: 'Вишудха',
           physics: left3,
           energy: top3,
-          emotions: "20",
-          color: "#C1F4FF",
+          emotions: '20',
+          color: '#C1F4FF',
         },
         {
-          chakraName: "Анахата",
+          chakraName: 'Анахата',
           physics: innerLeft2,
           energy: innerTop2,
-          emotions: "20",
-          color: "#C5F1D7",
+          emotions: '20',
+          color: '#C5F1D7',
         },
         {
-          chakraName: "Манипура",
+          chakraName: 'Манипура',
           physics: center,
           energy: center,
-          emotions: "20",
-          color: "#F7F9A1",
+          emotions: '20',
+          color: '#F7F9A1',
         },
         {
-          chakraName: "Свадхистана",
+          chakraName: 'Свадхистана',
           physics: right3,
           energy: bottom3,
-          emotions: "20",
-          color: "#FCDCAC",
+          emotions: '20',
+          color: '#FCDCAC',
         },
         {
-          chakraName: "Муладхара",
+          chakraName: 'Муладхара',
           physics: year,
           energy: bottom1,
-          emotions: "20",
-          color: "#FFB7B7",
+          emotions: '20',
+          color: '#FFB7B7',
         },
       ],
       total: checkNum(totalPers),
     },
     {
-      cardName: "Целостная карта здоровья",
-      columnName: ["Личная", "Родовая", "Исцеляющая"],
+      cardName: 'Целостная карта здоровья',
+      columnName: ['Личная', 'Родовая', 'Исцеляющая'],
       chakraList: [
         {
-          chakraName: "Сахасрара",
-          color: "#DCB9FF",
+          chakraName: 'Сахасрара',
+          color: '#DCB9FF',
         },
         {
-          chakraName: "Аджна",
-          color: "#B9C0FF",
+          chakraName: 'Аджна',
+          color: '#B9C0FF',
         },
         {
-          chakraName: "Вишудха",
-          color: "#C1F4FF",
+          chakraName: 'Вишудха',
+          color: '#C1F4FF',
         },
         {
-          chakraName: "Анахата",
-          color: "#C5F1D7",
+          chakraName: 'Анахата',
+          color: '#C5F1D7',
         },
         {
-          chakraName: "Манипура",
-          color: "#F7F9A1",
+          chakraName: 'Манипура',
+          color: '#F7F9A1',
         },
         {
-          chakraName: "Свадхистана",
-          color: "#FCDCAC",
+          chakraName: 'Свадхистана',
+          color: '#FCDCAC',
         },
         {
-          chakraName: "Муладхара",
-          color: "#FFB7B7",
+          chakraName: 'Муладхара',
+          color: '#FFB7B7',
         },
       ],
     },
@@ -364,7 +364,7 @@ export const getHealthInfo = (info) => {
   return list;
 };
 
-export const getPeriod = (info) => {
+export const getPeriod = info => {
   const {
     day,
     topLeft1,
@@ -447,8 +447,18 @@ export const getPeriod = (info) => {
     ...element,
     ...ageArcanesList[index],
     display:
-      element.age % 10 === 0 || index === 0 ? ["none", "none", "none"] : null,
+      element.age % 10 === 0 || index === 0 ? ['none', 'none', 'none'] : null,
   }));
 
   return ageList;
+};
+
+export const getCompatData = partners => {
+  const result = partners.reduce((acc, partner) => {
+    Object.entries(partner).forEach(([key, value]) => {
+      acc[key] = (acc[key] || 0) + value;
+    });
+    return acc;
+  }, {});
+  return allData(result, true);
 };
