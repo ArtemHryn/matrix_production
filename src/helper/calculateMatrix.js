@@ -118,28 +118,28 @@ export const getKarmaIssueData = info => {
   } = info;
   const data = [
     {
-      karmaName: 'Внешняя карма',
+      karmaName: "Внешняя карма",
       info: [
         {
-          type: 'Личная',
+          type: "Личная",
           energyInfo: [
-            { name: 'Личностная карма', energy: day },
-            { name: 'Духовная карма', energy: month },
-            { name: 'Карма здоровья и материальных результатов', energy: year },
-            { name: 'Карма прошлой жизни и древней мудрости', energy: bottom1 },
+            { name: "Личностная карма", energy: day },
+            { name: "Духовная карма", energy: month },
+            { name: "Карма здоровья и материальных результатов", energy: year },
+            { name: "Карма прошлой жизни и древней мудрости", energy: bottom1 },
           ],
         },
         {
-          type: 'Родовая',
+          type: "Родовая",
           energyInfo: [
-            { name: 'Духовная карма рода отца', energy: topLeft1 },
-            { name: 'Духовная карма рода матери', energy: topRight1 },
+            { name: "Духовная карма рода отца", energy: topLeft1 },
+            { name: "Духовная карма рода матери", energy: topRight1 },
             {
-              name: 'Сакрально-генетическая карма рода матери',
+              name: "Сакрально-генетическая карма рода матери",
               energy: bottomLeft1,
             },
             {
-              name: 'Сакрально-генетическая карма рода отца',
+              name: "Сакрально-генетическая карма рода отца",
               energy: bottomRight1,
             },
           ],
@@ -147,56 +147,56 @@ export const getKarmaIssueData = info => {
       ],
     },
     {
-      karmaName: 'Внутреняя карма',
+      karmaName: "Внутреняя карма",
       info: [
         {
-          type: 'Личная',
+          type: "Личная",
           energyInfo: [
-            { name: 'Детско-родительская карма', energy: left3 },
-            { name: 'Личная творческая карма', energy: top3 },
-            { name: 'Денежно-материальная карма', energy: right3 },
+            { name: "Детско-родительская карма", energy: left3 },
+            { name: "Личная творческая карма", energy: top3 },
+            { name: "Денежно-материальная карма", energy: right3 },
             {
-              name: 'Карма партнерских сексуальных отношений',
+              name: "Карма партнерских сексуальных отношений",
               energy: bottom3,
             },
           ],
         },
         {
-          type: 'Родовая',
+          type: "Родовая",
           energyInfo: [
-            { name: 'Творческая карма рода отца', energy: topLeft3 },
-            { name: 'Творческая карма рода матери', energy: topRight3 },
-            { name: 'Партнёрская карма рода матери', energy: bottomRight3 },
-            { name: 'Партнёрская карма рода отца', energy: bottomLeft3 },
+            { name: "Творческая карма рода отца", energy: topLeft3 },
+            { name: "Творческая карма рода матери", energy: topRight3 },
+            { name: "Партнёрская карма рода матери", energy: bottomLeft3 },
+            { name: "Партнёрская карма рода отца", energy: bottomRight3 },
           ],
         },
       ],
     },
     {
-      karmaName: 'Ключи внутренней матрицы',
+      karmaName: "Ключи внутренней матрицы",
       info: [
         {
-          type: 'Деньги',
+          type: "Деньги",
           energyInfo: [
             {
-              name: 'Карма творчества и денег',
+              name: "Карма творчества и денег",
               energy: `${right3} - ${top3} - ${innerTopRight}`,
             },
             {
-              name: 'Карма партнёрства и процветания',
+              name: "Карма партнёрства и процветания",
               energy: `${bottom3} - ${right3} - ${innerBottomRight}`,
             },
           ],
         },
         {
-          type: 'Семья',
+          type: "Семья",
           energyInfo: [
             {
-              name: 'Карма семейного творчества',
+              name: "Карма семейного творчества",
               energy: `${left3} - ${top3} - ${innerTopLeft}`,
             },
             {
-              name: 'Карма замужества и создания семьи',
+              name: "Карма замужества и создания семьи",
               energy: `${bottom3} - ${left3} - ${innerBottomLeft}`,
             },
           ],
