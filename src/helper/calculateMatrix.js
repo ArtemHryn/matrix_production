@@ -11,7 +11,7 @@ export function checkNum(num) {
   return +num;
 }
 
-export function allData(date, isGenerated) {
+export function allData(date, isGenerated, calCanter2 = true) {
   const data = {
     ...date,
   };
@@ -40,9 +40,12 @@ export function allData(date, isGenerated) {
   data.right3 = checkNum(data.year + data.center);
   data.right2 = checkNum(data.year + data.right3);
 
-  data.center2 = checkNum(
-    data.topLeft1 + data.topRight1 + data.bottomLeft1 + data.bottomRight1
-  );
+  if (calCanter2) {
+    data.center2 = checkNum(
+      data.topLeft1 + data.topRight1 + data.bottomLeft1 + data.bottomRight1
+    );
+  }
+
   data.topLeft3 = checkNum(data.center2 + data.topLeft1);
   data.topLeft2 = checkNum(data.topLeft1 + data.topLeft3);
   data.topRight3 = checkNum(data.center2 + data.topRight1);
@@ -118,28 +121,28 @@ export const getKarmaIssueData = info => {
   } = info;
   const data = [
     {
-      karmaName: "Внешняя карма",
+      karmaName: 'Внешняя карма',
       info: [
         {
-          type: "Личная",
+          type: 'Личная',
           energyInfo: [
-            { name: "Личностная карма", energy: day },
-            { name: "Духовная карма", energy: month },
-            { name: "Карма здоровья и материальных результатов", energy: year },
-            { name: "Карма прошлой жизни и древней мудрости", energy: bottom1 },
+            { name: 'Личностная карма', energy: day },
+            { name: 'Духовная карма', energy: month },
+            { name: 'Карма здоровья и материальных результатов', energy: year },
+            { name: 'Карма прошлой жизни и древней мудрости', energy: bottom1 },
           ],
         },
         {
-          type: "Родовая",
+          type: 'Родовая',
           energyInfo: [
-            { name: "Духовная карма рода отца", energy: topLeft1 },
-            { name: "Духовная карма рода матери", energy: topRight1 },
+            { name: 'Духовная карма рода отца', energy: topLeft1 },
+            { name: 'Духовная карма рода матери', energy: topRight1 },
             {
-              name: "Сакрально-генетическая карма рода матери",
+              name: 'Сакрально-генетическая карма рода матери',
               energy: bottomLeft1,
             },
             {
-              name: "Сакрально-генетическая карма рода отца",
+              name: 'Сакрально-генетическая карма рода отца',
               energy: bottomRight1,
             },
           ],
@@ -147,56 +150,56 @@ export const getKarmaIssueData = info => {
       ],
     },
     {
-      karmaName: "Внутреняя карма",
+      karmaName: 'Внутреняя карма',
       info: [
         {
-          type: "Личная",
+          type: 'Личная',
           energyInfo: [
-            { name: "Детско-родительская карма", energy: left3 },
-            { name: "Личная творческая карма", energy: top3 },
-            { name: "Денежно-материальная карма", energy: right3 },
+            { name: 'Детско-родительская карма', energy: left3 },
+            { name: 'Личная творческая карма', energy: top3 },
+            { name: 'Денежно-материальная карма', energy: right3 },
             {
-              name: "Карма партнерских сексуальных отношений",
+              name: 'Карма партнерских сексуальных отношений',
               energy: bottom3,
             },
           ],
         },
         {
-          type: "Родовая",
+          type: 'Родовая',
           energyInfo: [
-            { name: "Творческая карма рода отца", energy: topLeft3 },
-            { name: "Творческая карма рода матери", energy: topRight3 },
-            { name: "Партнёрская карма рода матери", energy: bottomLeft3 },
-            { name: "Партнёрская карма рода отца", energy: bottomRight3 },
+            { name: 'Творческая карма рода отца', energy: topLeft3 },
+            { name: 'Творческая карма рода матери', energy: topRight3 },
+            { name: 'Партнёрская карма рода матери', energy: bottomLeft3 },
+            { name: 'Партнёрская карма рода отца', energy: bottomRight3 },
           ],
         },
       ],
     },
     {
-      karmaName: "Ключи внутренней матрицы",
+      karmaName: 'Ключи внутренней матрицы',
       info: [
         {
-          type: "Деньги",
+          type: 'Деньги',
           energyInfo: [
             {
-              name: "Карма творчества и денег",
+              name: 'Карма творчества и денег',
               energy: `${right3} - ${top3} - ${innerTopRight}`,
             },
             {
-              name: "Карма партнёрства и процветания",
+              name: 'Карма партнёрства и процветания',
               energy: `${bottom3} - ${right3} - ${innerBottomRight}`,
             },
           ],
         },
         {
-          type: "Семья",
+          type: 'Семья',
           energyInfo: [
             {
-              name: "Карма семейного творчества",
+              name: 'Карма семейного творчества',
               energy: `${left3} - ${top3} - ${innerTopLeft}`,
             },
             {
-              name: "Карма замужества и создания семьи",
+              name: 'Карма замужества и создания семьи',
               energy: `${bottom3} - ${left3} - ${innerBottomLeft}`,
             },
           ],
@@ -460,5 +463,119 @@ export const getCompatData = partners => {
     });
     return acc;
   }, {});
-  return allData(result, true);
+  return allData(result, true, false);
+};
+
+export const getAnnualPeriodData = (data, year) => {
+  let startDate = new Date(+year, 0, 1); // January 1, 2023
+  let endDate = new Date(+year + 1, 0, 1);
+  let totalDays = Math.floor((endDate - startDate) / (24 * 60 * 60 * 1000)); // Total number of days in the year
+
+  let equalPartDuration = Math.floor((totalDays + 8) / 16); // Duration of each equal part
+  let dateRanges = [];
+
+  const chooseColor = month => {
+    switch (month) {
+      case 1:
+      case 2:
+      case 12:
+        return '#B9C0FF';
+      case 3:
+      case 4:
+      case 5:
+        return '#D2F8DB';
+      case 6:
+      case 7:
+      case 8:
+        return '#FFF2AD';
+      case 9:
+      case 10:
+      case 11:
+        return '#FFC8A0';
+      default:
+        break;
+    }
+  };
+
+  for (let i = 0; i < totalDays; i += equalPartDuration) {
+    let rangeStart = new Date(startDate.getTime() + i * 24 * 60 * 60 * 1000);
+    let rangeEnd;
+
+    if (i + equalPartDuration < totalDays) {
+      rangeEnd = new Date(
+        startDate.getTime() + (i + equalPartDuration - 1) * 24 * 60 * 60 * 1000
+      );
+    } else {
+      rangeEnd = new Date(
+        startDate.getTime() + (totalDays - 1) * 24 * 60 * 60 * 1000
+      );
+    }
+    dateRanges.push({
+      color: chooseColor(rangeStart.getMonth() + 1),
+      range: `${rangeStart.getDate().toString().padStart(2, '0')}.${(
+        rangeStart.getMonth() + 1
+      )
+        .toString()
+        .padStart(2, '0')} - ${rangeEnd
+        .getDate()
+        .toString()
+        .padStart(2, '0')}.${(rangeEnd.getMonth() + 1)
+        .toString()
+        .padStart(2, '0')}`,
+    });
+  }
+
+  const dataKeys = Object.keys(data);
+  dateRanges.forEach((element, index) => {
+    if (index === 0 || index % 2 === 0) {
+      element.arcane = data[dataKeys[index / 2]];
+      return;
+    }
+  });
+
+  dateRanges.forEach((element, index, array) => {
+    if (!array[index + 1]) {
+      element.arcane = checkNum(array[index - 1].arcane + array[0].arcane);
+      element.key = `${array[index].arcane} - ${
+        array[index].arcane
+      } - ${checkNum(array[index].arcane + array[index].arcane)}`;
+      return;
+    }
+    if (index !== 0 && index % 2 !== 0) {
+      element.arcane = checkNum(
+        array[index - 1].arcane + array[index + 1].arcane
+      );
+      return;
+    }
+  });
+
+  dateRanges.forEach((element, index, array) => {
+    if (index === array.length) {
+      return;
+    }
+    if (index === 0) {
+      element.key = `${array[0].arcane} - ${
+        array[array.length / 2].arcane
+      } - ${checkNum(array[0].arcane + array[array.length / 2].arcane)}`;
+      return;
+    }
+    if (index <= 7) {
+      element.key = `${array[index].arcane} - ${
+        array[index + array.length / 2].arcane
+      } - ${checkNum(
+        array[index].arcane + array[index + array.length / 2].arcane
+      )}`;
+      return;
+    }
+    if (index > 7) {
+      element.key = `${array[index].arcane} - ${
+        array[index - array.length / 2].arcane
+      } - ${checkNum(
+        array[index].arcane + array[index - array.length / 2].arcane
+      )}`;
+      return;
+    } 
+  });
+
+  return dateRanges;
 };

@@ -1,34 +1,56 @@
-import React, { useEffect, useState } from 'react';
+import { lazy, useEffect, useState } from 'react';
 import { Box } from 'components/Box';
 import {
   BtnItem,
   BtnList,
   Link,
 } from '../PersonalMatrix/MatrixBtn/MatrixBtn.styled';
-import Partners from './Partners/Partners';
+import { useMatrix } from 'pages/Calculator';
+import MatrixLoader from 'components/Spinner/MatrixLoader';
+
+const Partners = lazy(() => import('./Partners/Partners'));
+const Team = lazy(() => import('./Team/Team'));
+const Annual = lazy(() => import('./Annual/Annual'));
 
 const btnList = [
-  { name: 'ПАРТНЕРЫ', type: 'partners', disabled: false },
-  { name: 'КОЛЛЕКТИВ', type: 'team', disabled: true },
-  { name: 'Матрица ГОДА', type: 'year_matrix', disabled: true },
+  { name: 'ПАРТНЕРЫ', type: 'partners' },
+  { name: 'КОЛЛЕКТИВ', type: 'team' },
+  { name: 'Матрица ГОДА', type: 'year_matrix' },
 ];
 
 const CompatibilityMatrix = () => {
   const [compatibilityType, setCompatibilityType] = useState('partners');
+  const { setShowMatrix, setPartnersDate } = useMatrix();
+  const [showSpinner, setShowSpinner] = useState(true);
+
+  const onChangeCal = type => {
+    setCompatibilityType(type);
+    setShowMatrix(false);
+    setPartnersDate([]);
+    setShowSpinner(true);
+    setTimeout(() => {
+      setShowSpinner(false);
+    }, 500);
+  };
 
   useEffect(() => {
     const section = document.getElementById(`compatibility`);
     section.scrollIntoView({ behavior: 'smooth' });
+    const timer = setTimeout(() => {
+      setShowSpinner(false);
+    }, 500);
+
+    return () => clearTimeout(timer);
   }, []);
 
   const getMatrixType = () => {
     switch (compatibilityType) {
       case 'partners':
         return <Partners />;
-      case 'karmaIssues':
-        return null;
-      case 'healthMatrix':
-        return null;
+      case 'team':
+        return <Team />;
+      case 'year_matrix':
+        return <Annual />;
       default:
         break;
     }
@@ -42,20 +64,21 @@ const CompatibilityMatrix = () => {
         m="0 auto"
       >
         <BtnList>
-          {btnList.map(({ name, type, disabled }) => (
+          {btnList.map(({ name, type }) => (
             <BtnItem key={name}>
               {' '}
               <Link
                 className={compatibilityType === type ? 'active' : null}
-                onClick={() => setCompatibilityType(type)}
-                disabled={disabled}
+                onClick={() => {
+                  onChangeCal(type);
+                }}
               >
                 {name}
               </Link>
             </BtnItem>
           ))}
         </BtnList>
-        {getMatrixType()}
+        {showSpinner ? <MatrixLoader /> : getMatrixType()}
       </Box>
     </Box>
   );

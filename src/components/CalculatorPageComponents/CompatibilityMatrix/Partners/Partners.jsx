@@ -7,7 +7,7 @@ import PartnerMatrix from './PartnerMatrix/PartnerMatrix';
 import ResultMatrix from './ResultMatrix/ResultMatrix';
 
 const Partners = () => {
-  const [resultData, setResultData] = useState();
+  const [resultData, setResultData] = useState([]);
   const [partnersMatrixData, setPartnersMatrixData] = useState([]);
 
   const { partnersDate, showMatrix } = useMatrix();
@@ -39,7 +39,6 @@ const Partners = () => {
             display={[null, null, 'flex']}
             justifyContent="space-between"
             gridGap="40px"
-          
           >
             {partnersMatrixData.map((partner, index) => (
               <PartnerMatrix

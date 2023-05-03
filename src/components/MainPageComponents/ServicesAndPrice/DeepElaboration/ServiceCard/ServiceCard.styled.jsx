@@ -40,8 +40,6 @@ export const CardTitle = styled.h4`
   padding: 160px 27px 20px 32px;
   margin-bottom: 20px;
 
-  font-family: ${p => p.theme.fonts.main};
-  font-style: normal;
   font-weight: 400;
   font-size: 30px;
   line-height: 1.2;
@@ -71,9 +69,6 @@ export const CardDescription = styled.p`
   padding: 0 22px 0 32px;
   margin-bottom: 10px;
 
-  font-family: ${p => p.theme.fonts.main};
-  font-style: normal;
-  font-weight: 400;
   font-size: 17px;
   line-height: 1.24;
 
@@ -83,17 +78,6 @@ export const CardDescription = styled.p`
   @media screen and (min-width: ${p => p.theme.sizes.desktop}) {
     height: 80px;
   }
-`;
-
-export const Price = styled.p`
-  padding: 0 22px 0 32px;
-  font-family: ${p => p.theme.fonts.main};
-  font-style: normal;
-  font-weight: 400;
-  font-size: 25px;
-  line-height: 1.2;
-
-  color: ${p => p.theme.colors.secondText};
 `;
 
 export const Button = styled.button`
