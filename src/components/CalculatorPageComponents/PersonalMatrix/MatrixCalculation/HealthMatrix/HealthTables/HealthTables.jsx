@@ -1,47 +1,125 @@
+import { useTranslation, Trans } from 'react-i18next';
+import { useEffect, useState } from 'react';
 import { Box } from 'components/Box';
-import  { useEffect, useState } from 'react';
 import HealthCard from './HealthCard/HealthCard';
-import { SetCardTypeBtn } from '../HealthMatrix.styled';
+import { SetCardTypeBtn, Warning, WarningText } from '../HealthMatrix.styled';
 import { useMatrix } from 'pages/Calculator';
-import { getHealthInfo } from 'helper/calculateMatrix';
+import { authorHelthCard, getHealthInfo } from 'helper/calculateMatrix';
+import PasswordModal from './PasswordModal/PasswordModal';
 
-const HealthTables = () => {
-  const { matrixData } = useMatrix();
-  const [cardType, setCardType] = useState('Личная карта здоровья');
+const btnGradient =
+  'linear-gradient(180deg, #FFF 19.44%, #F5E9FF 52.78%, #F7C8FF 100%);';
+const btnGradientActive =
+  'linear-gradient(180deg, #765D90 5.73%, rgba(198, 106, 201, 0.51) 100%)';
+
+const HealthTables = ({ setCardType, cardType }) => {
+  const { i18n, t } = useTranslation('calc');
   const [list, setList] = useState([]);
-  const personal = 'Личная карта здоровья';
-  const integral = 'Целостная карта здоровья';
+  const [authorMethod, setAuthorMethod] = useState({});
+  const [showPasswordModal, setShowPasswordModal] = useState(false);
+  const [showAuthorMethod, setShowAuthorMethod] = useState(false);
+
+  const [formError, setFormError] = useState('');
+  const [passValue, setPassValue] = useState('');
+  const { matrixData } = useMatrix();
 
   useEffect(() => {
-    const result = getHealthInfo(matrixData);
+    if (showAuthorMethod) {
+      setAuthorMethod(authorHelthCard(matrixData, i18n.language));
+      return;
+    }
+    const result = getHealthInfo(matrixData, i18n.language);
     setList(result);
-  }, [matrixData]);
+  }, [i18n.language, matrixData, showAuthorMethod]);
+
+  const onFormSubmit = e => {
+    e.preventDefault();
+    if (passValue !== 'Dsaorniyn10234A') {
+      setFormError(t('incorrectPassword'));
+      return;
+    }
+    setShowPasswordModal(false);
+    setShowAuthorMethod(true);
+    setCardType(3);
+  };
   return (
     <Box width={[null, null, '900px']} m={'0 auto'}>
-      <Box display="flex" mb={['12px', '28px']} justifyContent="space-between">
+      <Box
+        display="flex"
+        mb={['12px', '28px']}
+        justifyContent="center"
+        alignItems="center"
+        flexWrap="wrap"
+        gridGap={['5px', '10px']}
+      >
         <SetCardTypeBtn
-          color={cardType === personal ? 'white' : null}
-          bg={cardType === personal ? '#765D90' : null}
-          boxShadow={cardType === personal ? 'activeBtn' : null}
-          onClick={() => setCardType('Личная карта здоровья')}
-          mr={['5px', '10px']}
+          color={cardType === 1 ? 'white' : null}
+          bg={cardType === 1 ? '#765D90' : null}
+          onClick={() => setCardType(1)}
         >
-          Личная
+          {t('healthCardTypePersonal')}
         </SetCardTypeBtn>
         <SetCardTypeBtn
-          color={cardType === integral ? 'white' : null}
-          bg={cardType === integral ? '#765D90' : null}
-          boxShadow={cardType === integral ? 'activeBtn' : null}
-          onClick={() => setCardType('Целостная карта здоровья')}
+          color={cardType === 2 ? 'white' : null}
+          bg={cardType === 2 ? '#765D90' : null}
+          onClick={() => setCardType(2)}
         >
-          Целостная
+          {t('healthCardTypeHolistic')}
+        </SetCardTypeBtn>
+        <SetCardTypeBtn
+          width={['80%']}
+          color={cardType === 3 ? 'white' : null}
+          background={cardType === 3 ? btnGradientActive : btnGradient}
+          onClick={() => {
+            if (showAuthorMethod) {
+              setCardType(3);
+              return;
+            }
+            setShowPasswordModal(true);
+          }}
+        >
+          {t('healthAuthor')} INTEGRITY*
         </SetCardTypeBtn>
       </Box>
-      <ul>
-        {list.map(card => (
-          <HealthCard key={card.cardName} card={card} cardType={cardType} />
-        ))}
-      </ul>
+      {list.map(card => (
+        <HealthCard key={card.cardName} card={card} cardType={cardType} />
+      ))}
+      {authorMethod.id === cardType && (
+        <>
+          <Box
+            display="flex"
+            flexDirection="column"
+            gridGap={['10px']}
+            my={['20px']}
+          >
+            <WarningText as="p">
+              <Trans i18nKey="healthAuthorWarning1" ns="calc">
+                <Warning>ВНИМАНИЕ!</Warning> Расчет "INTEGRITY" является
+                разработкой команды "Dari.Karma" и представлен на сайте для
+                тестирования.
+              </Trans>
+            </WarningText>
+            <WarningText as="p">
+              <Trans i18nKey="healthAuthorWarning2" ns="calc">
+                Данный расчёт карты здоровья является авторским и{' '}
+                <Warning>не соответствует </Warning>
+                алгоритму расчёта Н. Ладини
+              </Trans>
+            </WarningText>
+          </Box>
+          <HealthCard card={authorMethod} cardType={authorMethod.id} />
+        </>
+      )}
+      {showPasswordModal && (
+        <PasswordModal
+          setShowPasswordModal={setShowPasswordModal}
+          onFormSubmit={onFormSubmit}
+          formError={formError}
+          setFormError={setFormError}
+          passValue={passValue}
+          setPassValue={setPassValue}
+        />
+      )}
     </Box>
   );
 };

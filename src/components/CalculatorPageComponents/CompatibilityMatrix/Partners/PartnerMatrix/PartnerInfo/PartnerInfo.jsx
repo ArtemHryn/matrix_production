@@ -2,14 +2,15 @@ import { Box } from 'components/Box';
 import { ageCalculator } from 'helper/ageCalculator';
 import { useEffect, useState } from 'react';
 
-import star from 'images/Calculator/personalMatrix/star.webp';
-import { Age, NameDate, StarImg } from '../../Partners.styled';
+import { Age, NameDate } from '../../Partners.styled';
+import { useTranslation } from 'react-i18next';
 
 const gradient =
   'linear-gradient(180deg, rgba(255, 255, 255, 0.5) 0%, rgba(249, 237, 255, 0.5) 100%);';
 
 const PartnerInfo = ({ date, hideInfo }) => {
   const [age, setAge] = useState(null);
+  const { t } = useTranslation('calc');
   const { day, month, year, name } = date;
 
   useEffect(() => {
@@ -41,13 +42,12 @@ const PartnerInfo = ({ date, hideInfo }) => {
       </NameDate>
       {hideInfo && (
         <Age>
-          Возраст:{' '}
+          {t('aboutCustomerAge')}:{' '}
           <Age as="span" color="secondText">
             {age}
           </Age>
         </Age>
       )}
-      <StarImg src={star} alt="star" />
     </Box>
   );
 };

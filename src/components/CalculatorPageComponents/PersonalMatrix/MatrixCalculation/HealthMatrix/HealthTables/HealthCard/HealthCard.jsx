@@ -1,4 +1,5 @@
 import { Box } from 'components/Box';
+import { useTranslation } from 'react-i18next';
 import {
   CardName,
   ChakraElement,
@@ -9,11 +10,19 @@ import {
 } from '../../HealthMatrix.styled';
 
 const HealthCard = ({ card, cardType }) => {
-  const { cardName, columnName, chakraList, total } = card;
+  const { t } = useTranslation('calc');
+  const {
+    cardName,
+    columnName,
+    chakraList,
+    total,
+    id,
+    partners = false,
+  } = card;
   return (
     <>
-      {cardType === cardName && (
-        <Box as="li">
+      {cardType === id && (
+        <Box>
           <CardName>{cardName}</CardName>
           <Box
             display="flex"
@@ -38,7 +47,19 @@ const HealthCard = ({ card, cardType }) => {
           </Box>
           <List>
             {chakraList.map(
-              ({ chakraName, physics, energy, emotions, color }, index) => (
+              (
+                {
+                  chakraName,
+                  physics,
+                  energy,
+                  emotions,
+                  color,
+                  partner1,
+                  partner2,
+                  couple,
+                },
+                index
+              ) => (
                 <ChakraElement
                   key={chakraName}
                   border={
@@ -56,17 +77,17 @@ const HealthCard = ({ card, cardType }) => {
                     {chakraName}
                   </ChakraText>
 
-                  <ChakraText>{physics}</ChakraText>
-                  <ChakraText>{energy}</ChakraText>
+                  <ChakraText>{partners ? partner2 : energy}</ChakraText>
+                  <ChakraText>{partners ? partner1 : physics}</ChakraText>
                   <ChakraText border={['none', 'none', 'none']}>
-                    {emotions}
+                    {partners ? couple : emotions}
                   </ChakraText>
                 </ChakraElement>
               )
             )}
             {total && (
               <ChakraElement border={['none', 'none', 'none']}>
-                <ChakraText fontFamily="bona">Итог</ChakraText>
+                <ChakraText fontFamily="bona">{t('result')}</ChakraText>
                 <ChakraText
                   border={['none', 'none', 'none']}
                   minWidth={['225px', '423px', '570px']}

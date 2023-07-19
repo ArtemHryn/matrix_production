@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import { Box } from 'components/Box';
 import {
   AssistanseText,
@@ -10,11 +11,11 @@ import {
   Title,
 } from './ChangeYourFate.styled';
 import authorMob from 'images/Calculator/ChangeYourFate/AuthorPhoto.webp';
-import authorTab from 'images/Calculator/ChangeYourFate/authorTab.webp'
-import authorDesk from 'images/Calculator/ChangeYourFate/authorDesk.webp'
-
+import authorTab from 'images/Calculator/ChangeYourFate/authorTab.webp';
+import authorDesk from 'images/Calculator/ChangeYourFate/authorDesk.webp';
 
 export const ChangeYourFate = () => {
+  const {t} =  useTranslation('calc')
   return (
     <Box id="ChangeYourFate" as="section" py={['40px']}>
       <Box
@@ -28,28 +29,26 @@ export const ChangeYourFate = () => {
           display={[null, 'flex']}
           overflow="hidden"
           mb={['25px', '29px']}
+          justifyContent={[null, 'space-between']}
         >
           <Box
             mb={['7px', '0px']}
             py={[null, '42px']}
             pl={[null, '40px', '66px']}
             pr={[null, '11px']}
-            maxWidth={[null, '50%']}
+            maxWidth={[null, '60%', '65%']}
           >
             {' '}
-            <Logo>Dari.Karma</Logo>
-            <Line>
-              <Karmolog>Кармолог</Karmolog>
-            </Line>
-            <Title>
-              Хочешь больше узнать о своей судьбе и изменить её к лучшему?
-            </Title>
-            <AssistanseText>
-              Я буду рада стать твоим проводником на прекрасном пути
-              трансформации.
-            </AssistanseText>
+            <Box ml={[null, 'auto']}>
+              <Logo>Dari.Karma</Logo>
+              <Line>
+                <Karmolog>Кармолог</Karmolog>
+              </Line>
+            </Box>
+            <Title>{t('changeYourFateTitle')}</Title>
+            <AssistanseText>{t('changeYourFateAssistanseText')}</AssistanseText>
             <ConsultationBtn to="/" state={{ from: '4methods' }}>
-              Записаться на консультацию
+              {t('changeYourFateConsultationBtn')}
             </ConsultationBtn>
           </Box>
           <picture>
@@ -59,13 +58,13 @@ export const ChangeYourFate = () => {
           </picture>
         </Box>
         <CalcAuthor>
-          Обучиться всем профессиональным расчётам можно у{' '}
+          {t('changeYourFateCalcAuthor1')}{' '}
           <CalcAuthor as="span" fontWeight="700" fontStyle="italic">
-            Наталии Ладини
+            {t('changeYourFateCalcAuthor2')}
           </CalcAuthor>{' '}
-          и{' '}
+          {t('changeYourFateCalcAuthor3')}{' '}
           <CalcAuthor as="span" fontWeight="700" fontStyle="italic">
-            Сергея Скляренко
+            {t('changeYourFateCalcAuthor4')}
           </CalcAuthor>
         </CalcAuthor>
       </Box>

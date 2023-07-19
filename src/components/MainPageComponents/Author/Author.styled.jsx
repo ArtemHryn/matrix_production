@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const AuthorTitle = styled.h2`
   font-weight: 400;
-  font-size: 48px;
+  font-size: 44px;
   line-height: 58px;
   letter-spacing: 0.01em;
   margin-bottom: 25px;
@@ -67,10 +67,11 @@ export const AuthorImg = styled.img`
 `;
 export const AboutAuthor = styled.ul`
   @media screen and (min-width: ${p => p.theme.sizes.tablet}) {
-    margin-bottom: 54px;
+    margin-bottom: 80px;
   }
   @media screen and (min-width: ${p => p.theme.sizes.desktop}) {
     display: flex;
+     margin-bottom: 54px;
   }
 `;
 

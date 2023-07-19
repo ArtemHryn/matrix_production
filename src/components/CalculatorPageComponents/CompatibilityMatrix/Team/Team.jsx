@@ -5,12 +5,15 @@ import { useEffect, useState } from 'react';
 import PartnerMatrix from '../Partners/PartnerMatrix/PartnerMatrix';
 import { allData, getCompatData } from 'helper/calculateMatrix';
 import ResultMatrix from '../Partners/ResultMatrix/ResultMatrix';
+import { useTranslation } from 'react-i18next';
 
 const Team = () => {
   const { partnersDate, showMatrix } = useMatrix();
 
   const [resultData, setResultData] = useState();
   const [teamMatrixData, setTeamMatrixData] = useState([]);
+  const [isFullOverlap, setIsFullOverlap] = useState(false);
+  const { t } = useTranslation('calc');
 
   useEffect(() => {
     if (partnersDate === 0) {
@@ -20,19 +23,19 @@ const Team = () => {
     partnersDate.forEach((element, index) => {
       const memberInfo = allData(element, false);
       memberInfo.name = element.name;
-      memberInfo.order = `МАТРИЦА ${index + 1}`;
+      memberInfo.order = `${t('tableMatrix')} ${index + 1}`;
       members.push(memberInfo);
     });
     setTeamMatrixData(members);
-  }, [partnersDate]);
+  }, [partnersDate, t]);
 
   useEffect(() => {
-    setResultData(getCompatData(teamMatrixData));
-  }, [teamMatrixData]);
+    setResultData(getCompatData(teamMatrixData, isFullOverlap));
+  }, [isFullOverlap, teamMatrixData]);
 
   return (
     <Box>
-      <DataInput />
+      <DataInput setIsFullOverlap={setIsFullOverlap} />
       {showMatrix && (
         <>
           <ResultMatrix resultData={resultData} />

@@ -1,6 +1,7 @@
+import { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { allData, getCompatData } from 'helper/calculateMatrix';
 import { useMatrix } from 'pages/Calculator';
-import { useEffect, useState } from 'react';
 import DataInput from './DataInput/DataInput';
 import { Box } from 'components/Box';
 import ResultMatrix from '../Partners/ResultMatrix/ResultMatrix';
@@ -10,10 +11,12 @@ import AnnualPeriodTable from './AnnualPeriodTable/AnnualPeriodTable';
 
 const Annual = () => {
   const { partnersDate, showMatrix } = useMatrix();
+  const { t } = useTranslation('calc');
 
   const [resultData, setResultData] = useState();
   const [annualMatrixData, setAnnualMatrixData] = useState([]);
   const [tableInfo, setTableInfo] = useState([]);
+  const [isFullOverlap, setIsFullOverlap] = useState(false);
 
   useEffect(() => {
     if (partnersDate === 0) {
@@ -22,19 +25,19 @@ const Annual = () => {
     const partners = [];
     partnersDate.forEach((element, index) => {
       const partnerInfo = allData(element, element.isGenerated);
-      partnerInfo.order = `МАТРИЦА ${index + 1}`;
+      partnerInfo.order = `${t('tableMatrix')} ${index + 1}`;
       partners.push(partnerInfo);
     });
     setAnnualMatrixData(partners);
-  }, [partnersDate]);
+  }, [partnersDate, t]);
 
   useEffect(() => {
-    setResultData(getCompatData(annualMatrixData));
-  }, [annualMatrixData]);
+    setResultData(getCompatData(annualMatrixData, isFullOverlap));
+  }, [annualMatrixData, isFullOverlap]);
 
   return (
     <Box>
-      <DataInput />
+      <DataInput setIsFullOverlap={setIsFullOverlap} />
       {showMatrix && (
         <>
           <ResultMatrix
@@ -42,6 +45,12 @@ const Annual = () => {
             matrix={Matrix}
             isAnual={true}
             yearArcanes={tableInfo.filter((element, index) => index % 2 !== 0)}
+          />
+          <AnnualPeriodTable
+            resultData={resultData}
+            matrixYear={partnersDate[1].year}
+            tableInfo={tableInfo}
+            setTableInfo={setTableInfo}
           />
           <Box
             display={[null, null, 'flex']}
@@ -60,12 +69,6 @@ const Annual = () => {
               />
             ))}
           </Box>
-          <AnnualPeriodTable
-            resultData={resultData}
-            matrixYear={partnersDate[1].year}
-            tableInfo={tableInfo}
-            setTableInfo={setTableInfo}
-          />
         </>
       )}
     </Box>

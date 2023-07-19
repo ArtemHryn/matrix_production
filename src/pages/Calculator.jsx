@@ -16,9 +16,11 @@ import Footer from 'components/CalculatorPageComponents/Footer/Footer';
 
 import { CalcContainer } from 'components/Common/Common.styled';
 
-import navigationListCalc from 'components/CalculatorPageComponents/navigationLisCalc';
 import { content } from 'helper/content';
 import MatrixLoader from 'components/Spinner/MatrixLoader';
+import { useTranslation } from 'react-i18next';
+import getNavList from 'components/CalculatorPageComponents/navigationLisCalc';
+import { Box } from 'components/Box';
 
 const MatrixContext = createContext();
 export const useMatrix = () => useContext(MatrixContext);
@@ -34,12 +36,18 @@ const Calculator = () => {
   const [age, setAge] = useState({});
   const [currentKey, setCurrentKey] = useState('');
   const [partnersDate, setPartnersDate] = useState([]);
+  const { i18n } = useTranslation();
 
   useEffect(() => {
     const metaTag = document.querySelector('meta[name="description"]');
     document.title = 'Dari.Karma | Калькулятор Матрицы Судьбы';
     metaTag.setAttribute('content', content);
   }, [date]);
+
+  const getNavCalList = () => {
+    const lng = i18n.language;
+    return getNavList(lng);
+  };
 
   return (
     <MatrixContext.Provider
@@ -67,15 +75,17 @@ const Calculator = () => {
       }}
     >
       <CalcContainer>
-        <Header navigationList={navigationListCalc} />
-        <Hero />
-        <Suspense fallback={<MatrixLoader />}>
-          <Outlet />
-        </Suspense>
-        <ChangeYourFate />
-        <Donation />
-        <Contacts />
-        <GetPDFTemplate />
+        <Header navigationList={getNavCalList()} />
+        <Box as='main'>
+          <Hero />
+          <Suspense fallback={<MatrixLoader />}>
+            <Outlet />
+          </Suspense>
+          <ChangeYourFate />
+          <Donation />
+          <Contacts />
+          <GetPDFTemplate />
+        </Box>
         <Footer />
       </CalcContainer>
     </MatrixContext.Provider>

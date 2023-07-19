@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import {
+  background,
   border,
   color,
   flexbox,
@@ -26,7 +27,6 @@ export const SetCardTypeBtn = styled.button`
   color: ${p => p.theme.colors.activeBtn};
 
   background-color: ${p => p.theme.colors.white};
-  box-shadow: 0px 3.4px 3.4px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
   transition: all 250ms ease-in-out;
   cursor: pointer;
@@ -40,11 +40,12 @@ export const SetCardTypeBtn = styled.button`
     font-size: 20px;
     line-height: 1.2;
     height: 48px;
-    box-shadow: 0px 5.4px 5.4px rgba(0, 0, 0, 0.25);
   }
   ${space}
   ${color}
   ${shadow}
+  ${layout}
+  ${background}
 `;
 
 export const CardName = styled.p`
@@ -183,4 +184,26 @@ export const ChakraText = styled.p`
   ${border}
   ${layout}
   ${typography}
+`;
+
+export const Warning = styled.span`
+  color: #9072af;
+  font-family: Cormorant;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.18;
+  letter-spacing: 0.01em;
+  text-align: center;
+  @media screen and (min-width: ${p => p.theme.sizes.tablet}) {
+    font-size: 22px;
+  }
+  @media screen and (min-width: ${p => p.theme.sizes.desktop}) {
+    font-size: 26px;
+  }
+`;
+
+export const WarningText = styled(Warning)`
+  font-weight: 400;
+  display: block;
+  letter-spacing: 100%;
 `;

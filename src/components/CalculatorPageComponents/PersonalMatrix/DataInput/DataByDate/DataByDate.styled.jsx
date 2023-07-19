@@ -21,8 +21,7 @@ export const FrontCard = styled(motion.div)`
     margin: 0 auto 38px;
     padding: 48px 55px 68px;
   }
-  @media screen and (min-width: ${p => p.theme.sizes.desktop}) {
-  }
+
 `;
 
 export const Input = styled.input`
@@ -30,7 +29,7 @@ export const Input = styled.input`
   border: 0.6px solid rgba(221, 197, 255, 0.6);
   border-radius: 6px;
   width: 100%;
-  height: 35px;
+  height: 45px;
   padding: 10px 14px;
 
   font-family: ${p => p.theme.fonts.main};
@@ -48,7 +47,7 @@ export const Input = styled.input`
   }
 
   @media screen and (min-width: ${p => p.theme.sizes.tablet}) {
-    height: 47px;
+    height: 57px;
     font-size: 21px;
   }
 `;

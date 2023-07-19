@@ -1,18 +1,22 @@
+import { useTranslation } from 'react-i18next';
 import { Box } from 'components/Box';
-import star from 'images/Calculator/Hero/star.webp';
 import {
   DariLogo,
   DariLogoImg,
-  LogoStar,
   NavigationElement,
   NavigationLink,
   NavigationList,
   PoliticList,
   PoliticText,
 } from './Footer.styled';
-import list from '../navigationLisCalc';
+import getNavList from '../navigationLisCalc';
 
 const Footer = () => {
+  const { i18n, t } = useTranslation('calc');
+  const getNavCalList = () => {
+    const lng = i18n.language;
+    return getNavList(lng);
+  };
   return (
     <Box as="footer" py={['40px', null, '80px']}>
       <Box
@@ -28,10 +32,10 @@ const Footer = () => {
         </Box>
         <Box flex="2">
           <DariLogo>
-            Dari.Karma <LogoStar src={star} alt="star" />
+            Dari.Karma
           </DariLogo>
           <NavigationList>
-            {list.map(item => (
+            {getNavCalList().map(item => (
               <NavigationElement key={item.name}>
                 <NavigationLink href={item.href}>{item.name}</NavigationLink>
               </NavigationElement>
@@ -39,10 +43,10 @@ const Footer = () => {
           </NavigationList>
           <PoliticList>
             <li>
-              <PoliticText>Политика конфиденциальности</PoliticText>
+              <PoliticText>{t('footerPoliticText1')}</PoliticText>
             </li>
             <li>
-              <PoliticText>Дизайн сайта by aleomore и dari.karma</PoliticText>
+              <PoliticText>{t('footerPoliticText2')}</PoliticText>
             </li>
           </PoliticList>
         </Box>

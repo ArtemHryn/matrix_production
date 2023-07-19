@@ -1,6 +1,7 @@
 import { Box } from 'components/Box';
 import { HeaderLink, HeaderList, HeaderListItem, Logo } from './Header.styled';
 import { MainPageHeader } from './MobileHeaderMenu/MobileMenu';
+import SwitchLanguage from './SwitchLanguage/SwitchLanguage';
 
 export const Header = ({ navigationList }) => {
   return (
@@ -14,6 +15,8 @@ export const Header = ({ navigationList }) => {
       backgroundPosition="bottom"
       backgroundSize="15px 2px"
       backgroundRepeat="repeat-x"
+      position='relative'
+      zIndex='100'
     >
       <MainPageHeader navigationList={navigationList} />
       <Box
@@ -23,9 +26,10 @@ export const Header = ({ navigationList }) => {
         maxWidth={['400px', '768px', '1440px']}
         px={['60px', '33px', '100px']}
         m="0 auto"
+        as='nav'
       >
         <Logo href="/">Dari.Karma</Logo>
-        <Box as="nav">
+        <Box as="nav" display="flex" alignItems="center">
           <HeaderList>
             {navigationList.map(({ name, href }) => (
               <HeaderListItem key={name}>
@@ -33,6 +37,7 @@ export const Header = ({ navigationList }) => {
               </HeaderListItem>
             ))}
           </HeaderList>
+          <SwitchLanguage />
         </Box>
       </Box>
     </Box>
