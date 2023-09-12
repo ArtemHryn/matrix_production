@@ -1,6 +1,5 @@
 import { useEffect } from 'react';
 import { createPortal } from 'react-dom';
-import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
 import { motion } from 'framer-motion';
 import useMeasure from 'react-use-measure';
 
@@ -28,14 +27,10 @@ export const ModalLayout = ({
       }
     };
     window.addEventListener('keydown', onCloseByEscape);
-    if (width >= 1440) {
-      disableBodyScroll(modalRoot);
-    }
+    document.body.style.overflow = 'hidden';
     return () => {
       window.removeEventListener('keydown', onCloseByEscape);
-      if (width >= 1440) {
-        enableBodyScroll(modalRoot);
-      }
+      document.body.style.overflow = 'visible';
     };
   }, [setShowModal, width]);
 
