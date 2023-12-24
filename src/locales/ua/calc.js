@@ -21,7 +21,8 @@ const calcUa = {
   getPDFTemplateHowTo2: 'та напиши в особисті повідомлення кодову фразу “Хочу Шаблони”',
   footerPoliticText1: 'Політика конфіденційності',
   footerPoliticText2: 'Дизайн сайту by aleomore і dari.karma',
-  fullOverlapCheckbox: 'Техніка повного накладання матриць Н. Ладіні',
+  fullOverlapCheckbox: 'Техніка повного накладання матриць',
+  method2023: 'Техніка накладання 8 карм',
   personalMatrixCalc: 'розрахувати',
   personalMatrixBoxTitle: 'введіть дані',
   personalMatrixNamePlaceholder: 'Ім’я',
@@ -49,8 +50,7 @@ const calcUa = {
     '<0>УВАГА!</0> Система "INTEGRITY" є розробкою команди "Dari.Karma" та представлена на сайті для тестування.',
   healthAuthorWarning2:
     "Даний розрахунок карти здоров'я <1>не відповідає </1> алгоритму розрахунку Н. Ладіні",
-  healthCardTypePersonal: 'Особиста',
-  healthCardTypeHolistic: 'Цілісна',
+  healthCardTypePersonal: 'Класична',
   healthCardTipPurpose: 'Функція',
   healthCardTipInternalCondition: 'Внутрішній стан',
   healthCardTipDisturbance: 'Порушення',
@@ -69,6 +69,11 @@ const calcUa = {
   yearEnterError: 'Введіть рік',
   yearPatternError: 'Введіть 4-значний рік від 2000 до 2100',
   yearPeriods: 'Періоди року',
+  deepCalcProg: 'ПРОГРАМИ',
+  deepGenericBtn1: 'РОДОВІ',
+  deepGenericBtn2: 'Цілісні',
+  motherMatrixTitle: 'МАТРИЦЯ МАТЕРІ',
+  childMatrixTitle: 'МАТРИЦЯ ДИТИНИ',
   instructionTitle: 'Використовуй можливості калькулятора від <1>Dari.Karma</1> на всі 100%',
   instructionCircleBtn1: 'Відеоінструкція до калькулятора',
   instructionCircleBtn2: 'Безкоштовні вебінари про “INTEGRITY”',
@@ -78,5 +83,6 @@ const calcUa = {
   instructionModalTitle2: 'Вебінари про систему "INTEGRITY"',
   instructionModalBtn1: 'купити інструкцію',
   instructionModalBtn2: 'Дивитися безкоштовно',
+  deepLightGateBtn: 'Зцілення',
 };
 export default calcUa;

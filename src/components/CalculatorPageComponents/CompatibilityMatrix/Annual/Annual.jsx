@@ -13,6 +13,7 @@ const Annual = () => {
   const { partnersDate, showMatrix } = useMatrix();
   const { t } = useTranslation('calc');
 
+  const [isMethod2023, setIsMethod2023] = useState(false);
   const [resultData, setResultData] = useState();
   const [annualMatrixData, setAnnualMatrixData] = useState([]);
   const [tableInfo, setTableInfo] = useState([]);
@@ -24,7 +25,7 @@ const Annual = () => {
     }
     const partners = [];
     partnersDate.forEach((element, index) => {
-      const partnerInfo = allData(element, element.isGenerated);
+      const partnerInfo = allData({date: element, isGenerated: element.isGenerated});
       partnerInfo.order = `${t('tableMatrix')} ${index + 1}`;
       partners.push(partnerInfo);
     });
@@ -32,12 +33,12 @@ const Annual = () => {
   }, [partnersDate, t]);
 
   useEffect(() => {
-    setResultData(getCompatData(annualMatrixData, isFullOverlap));
-  }, [annualMatrixData, isFullOverlap]);
+    setResultData(getCompatData(annualMatrixData, isFullOverlap, isMethod2023));
+  }, [annualMatrixData, isFullOverlap, isMethod2023]);
 
   return (
     <Box>
-      <DataInput setIsFullOverlap={setIsFullOverlap} />
+      <DataInput setIsFullOverlap={setIsFullOverlap} setIsMethod2023={setIsMethod2023} />
       {showMatrix && (
         <>
           <ResultMatrix

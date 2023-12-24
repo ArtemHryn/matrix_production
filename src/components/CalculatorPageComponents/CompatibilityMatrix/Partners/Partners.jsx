@@ -19,10 +19,11 @@ const btnGradientActive = 'linear-gradient(180deg, #765D90 5.73%, rgba(198, 106,
 
 const Partners = () => {
   const [resultData, setResultData] = useState([]);
-  const [cardType, setCardType] = useState(1);
+  const [cardType, setCardType] = useState(2);
   const [partnersMatrixData, setPartnersMatrixData] = useState([]);
   const [partnersHealthCard, setPartnersHealthCard] = useState([]);
   const [isFullOverlap, setIsFullOverlap] = useState(false);
+  const [isMethod2023, setIsMethod2023] = useState(false);
   const { t, i18n } = useTranslation('calc');
 
   const { partnersDate, showMatrix } = useMatrix();
@@ -33,7 +34,7 @@ const Partners = () => {
     }
     const partners = [];
     partnersDate.forEach((element, index) => {
-      const partnerInfo = allData(element, element.isGenerated);
+      const partnerInfo = allData({ date: element, isGenerated: element.isGenerated });
       partnerInfo.order = `${t('tableMatrix')} ${index + 1}`;
       partners.push(partnerInfo);
     });
@@ -41,17 +42,17 @@ const Partners = () => {
   }, [partnersDate, showMatrix, t]);
 
   useEffect(() => {
-    setResultData(getCompatData(partnersMatrixData, isFullOverlap));
+    setResultData(getCompatData(partnersMatrixData, isFullOverlap, isMethod2023));
 
     if (partnersMatrixData.length === 0) return;
     const classicTable = getPartnersChakra(partnersMatrixData, i18n.language);
     const authorTable = partnersAuthorHealthCard(partnersMatrixData, i18n.language);
     setPartnersHealthCard([classicTable, authorTable]);
-  }, [i18n.language, isFullOverlap, partnersMatrixData]);
+  }, [i18n.language, isFullOverlap, isMethod2023, partnersMatrixData]);
 
   return (
     <>
-      <DataInput setIsFullOverlap={setIsFullOverlap} />
+      <DataInput setIsFullOverlap={setIsFullOverlap} setIsMethod2023={setIsMethod2023} />
       {showMatrix && (
         <>
           <ResultMatrix resultData={resultData} />
@@ -85,9 +86,9 @@ const Partners = () => {
               </SetCardTypeBtn>
             </Box>
 
-            {partnersHealthCard.map(table => (
-              <HealthCard key={table.id} card={table} cardType={cardType} />
-            ))}
+            {partnersHealthCard.length !== 0 && (
+              <HealthCard card={cardType === 1 ? partnersHealthCard[0] : partnersHealthCard[1]} />
+            )}
           </Box>
           <Box display={[null, null, 'flex']} justifyContent="space-between" gridGap="40px">
             {partnersMatrixData.map((partner, index) => (

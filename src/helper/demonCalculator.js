@@ -48,16 +48,43 @@ const demon15 = {
   bottomRight1: 6,
 };
 
+const manMoney = {
+  topLeft1: 3,
+  month: 12,
+  topRight1: 21,
+  day: 4,
+  center: 13,
+  year: 22,
+  bottomLeft1: 7,
+  bottom1: 7,
+  bottomRight1: 7,
+};
+const womanMoney = {
+  topLeft1: 4,
+  month: 13,
+  topRight1: 22,
+  day: 3,
+  center: 12,
+  year: 21,
+  bottomLeft1: 7,
+  bottom1: 7,
+  bottomRight1: 7,
+};
+
 export const getStaticDemonMatrix = number => {
   switch (number) {
     case '12':
-      return allData(demon12, true);
+      return allData({ date: demon12, isGenerated: true });
     case '13':
-      return allData(demon13, true);
+      return allData({ date: demon13, isGenerated: true });
     case '14':
-      return allData(demon14, true);
+      return allData({ date: demon14, isGenerated: true });
     case '15':
-      return allData(demon15, true);
+      return allData({ date: demon15, isGenerated: true });
+    case 'm':
+      return allData({ date: manMoney, isGenerated: true });
+    case 'w':
+      return allData({ date: womanMoney, isGenerated: true });
     default:
       break;
   }
