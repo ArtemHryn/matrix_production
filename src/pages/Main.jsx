@@ -1,22 +1,22 @@
-import { useEffect } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
-import { Box } from 'components/Box';
-import { AboutKarma } from 'components/MainPageComponents/AboutKarma/AboutKarma';
-import { Author } from 'components/MainPageComponents/Author/Author';
-import { CalculateYourMatrix } from 'components/MainPageComponents/CalculateYourMatrix/CalculateYourMatrix';
-import { CustomerReviewers } from 'components/MainPageComponents/CustomerReviewers/CustomerReviewers';
-import { Footer } from 'components/MainPageComponents/Footer/Footer';
-import { FreeRecommendations } from 'components/MainPageComponents/FreeRecommendations/FreeRecommendations';
-import { MainHero } from 'components/MainPageComponents/Hero/Hero';
-import { ServicesAndPrice } from 'components/MainPageComponents/ServicesAndPrice/ServicesAndPrice';
-import { WaysToTransformation } from 'components/MainPageComponents/WaysToTransformation/WaysToTransformation';
-import { WhatIsMatrix } from 'components/MainPageComponents/WhatIsMatrix/WhatIsMatrix';
-import { WhatPeopleAsk } from 'components/MainPageComponents/WhatPeopleAsk/WhatPeopleAsk';
-import backgroundFooterImage from 'images/backgroundPlanet.webp';
-import { MatrixPlusAndMinus } from 'components/MainPageComponents/MatrixPlusAndMinus/MatrixPlusAndMinus';
-import { Header } from 'components/MainPageComponents/Header/Header';
-import { useTranslation } from 'react-i18next';
-import getNavList from 'components/MainPageComponents/Header/navigationList';
+import { useEffect } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
+import { Box } from "components/Box";
+import { AboutKarma } from "components/MainPageComponents/AboutKarma/AboutKarma";
+import { Author } from "components/MainPageComponents/Author/Author";
+import { CalculateYourMatrix } from "components/MainPageComponents/CalculateYourMatrix/CalculateYourMatrix";
+import { CustomerReviewers } from "components/MainPageComponents/CustomerReviewers/CustomerReviewers";
+import { Footer } from "components/MainPageComponents/Footer/Footer";
+import { FreeRecommendations } from "components/MainPageComponents/FreeRecommendations/FreeRecommendations";
+import { MainHero } from "components/MainPageComponents/Hero/Hero";
+import { ServicesAndPrice } from "components/MainPageComponents/ServicesAndPrice/ServicesAndPrice";
+import { WaysToTransformation } from "components/MainPageComponents/WaysToTransformation/WaysToTransformation";
+import { WhatIsMatrix } from "components/MainPageComponents/WhatIsMatrix/WhatIsMatrix";
+import { WhatPeopleAsk } from "components/MainPageComponents/WhatPeopleAsk/WhatPeopleAsk";
+import backgroundFooterImage from "images/backgroundPlanet.webp";
+import { MatrixPlusAndMinus } from "components/MainPageComponents/MatrixPlusAndMinus/MatrixPlusAndMinus";
+import { Header } from "components/MainPageComponents/Header/Header";
+import { useTranslation } from "react-i18next";
+import getNavList from "components/MainPageComponents/Header/navigationList";
 import SnowFallen from 'components/Common/SnowFallen/SnowFallen';
 
 const imgLink = `url(${backgroundFooterImage})`;
@@ -26,6 +26,15 @@ const Main = () => {
   const navigate = useNavigate();
   const { i18n } = useTranslation();
 
+  const currentDate = new Date();
+  const currentMonth = currentDate.getMonth() + 1;
+  const currentDay = currentDate.getDate();
+
+  const isVisible =
+    currentMonth === 12 ||
+    currentMonth === 1 ||
+    (currentMonth === 2 && currentDay <= 28);
+
   const getNavCalList = () => {
     const lng = i18n.language;
     return getNavList(lng);
@@ -34,8 +43,8 @@ const Main = () => {
   useEffect(() => {
     if (location.state && location.state.from) {
       const section = document.getElementById(`${location.state.from}`);
-      section.scrollIntoView({ behavior: 'smooth' });
-      navigate('/', { replace: true });
+      section.scrollIntoView({ behavior: "smooth" });
+      navigate("/", { replace: true });
     }
   }, [location, navigate]);
 
@@ -58,7 +67,7 @@ const Main = () => {
         <FreeRecommendations />
         <Footer />
       </Box>
-      <SnowFallen />
+      {isVisible && <SnowFallen />}
     </>
   );
 };
