@@ -110,7 +110,7 @@ const HealthTables = ({ setCardType, cardType }) => {
           </WarningText>
           <WarningText as="p">
             <Trans i18nKey="healthAuthorWarning2" ns="calc">
-              Данный расчёт карты здоровья является авторским и{" "}
+              Данный расчёт карты здоровья является авторским и
               <Warning>не соответствует </Warning>
               алгоритму расчёта Н. Ладини
             </Trans>
