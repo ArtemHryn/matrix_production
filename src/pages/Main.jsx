@@ -67,7 +67,7 @@ const Main = () => {
         <FreeRecommendations />
         <Footer />
       </Box>
-      {isVisible && <SnowFallen />}
+      {/* {isVisible && <SnowFallen />} */}
     </>
   );
 };

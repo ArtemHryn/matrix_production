@@ -100,7 +100,7 @@ const Calculator = () => {
         </Box>
         <Footer />
       </CalcContainer>
-      {isVisible && <SnowFallen />}
+      {/* {isVisible && <SnowFallen />} */}
     </MatrixContext.Provider>
   );
 };
