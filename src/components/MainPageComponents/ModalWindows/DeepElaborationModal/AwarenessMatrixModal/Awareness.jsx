@@ -88,7 +88,7 @@ export const Awareness = () => {
             justifyContent={['space-between', 'flex-start']}
             pt={['25px', '40px']}
           >
-            <Price>$150</Price>
+            <Price>$170</Price>
             <BuyButton href="https://t.me/DariKarma">{t('buy')}</BuyButton>
           </Box>
         </Box>
