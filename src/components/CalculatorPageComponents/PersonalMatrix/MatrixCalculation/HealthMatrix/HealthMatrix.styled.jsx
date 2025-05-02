@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 import {
   background,
   border,
@@ -8,25 +8,25 @@ import {
   shadow,
   space,
   typography,
-} from "styled-system";
+} from 'styled-system';
 
 export const SetCardTypeBtn = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 80%;
+  width: calc((100% - 5px) / 2);
   height: 34px;
 
-  font-family: ${(p) => p.theme.fonts.main};
+  font-family: ${p => p.theme.fonts.main};
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
   line-height: 1.19;
   text-transform: uppercase;
 
-  color: ${(p) => p.theme.colors.activeBtn};
+  color: ${p => p.theme.colors.activeBtn};
 
-  background-color: ${(p) => p.theme.colors.white};
+  background-color: ${p => p.theme.colors.white};
   border-radius: 10px;
   transition: all 250ms ease-in-out;
   cursor: pointer;
@@ -34,7 +34,7 @@ export const SetCardTypeBtn = styled.button`
   &:focus {
     transform: scale(1.03);
   }
-  @media screen and (min-width: ${(p) => p.theme.sizes.tablet}) {
+  @media screen and (min-width: ${p => p.theme.sizes.tablet}) {
     width: calc((100% - 10px) / 2);
     height: 34px;
     font-size: 20px;
@@ -55,24 +55,20 @@ export const CardName = styled.p`
   align-items: center;
   height: 48px;
 
-  background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0.7) 0%,
-    rgba(249, 237, 255, 0.7) 100%
-  );
-  border: 0.7px solid ${(p) => p.theme.colors.text};
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.7) 0%, rgba(249, 237, 255, 0.7) 100%);
+  border: 0.7px solid ${p => p.theme.colors.text};
   border-radius: 8px;
   margin-bottom: 4px;
 
-  font-family: ${(p) => p.theme.fonts.main};
+  font-family: ${p => p.theme.fonts.main};
   font-style: italic;
   font-weight: 400;
   font-size: 15px;
   line-height: 1.69;
   letter-spacing: 0.01em;
 
-  color: ${(p) => p.theme.colors.text};
-  @media screen and (min-width: ${(p) => p.theme.sizes.tablet}) {
+  color: ${p => p.theme.colors.text};
+  @media screen and (min-width: ${p => p.theme.sizes.tablet}) {
     font-size: 29px;
     height: 70px;
     margin-bottom: 7px;
@@ -88,24 +84,24 @@ export const ChakraTableTitle = styled.p`
   flex: 1;
   height: 33px;
   min-width: 75px;
-  border-right: 0.5px solid ${(p) => p.theme.colors.main};
+  border-right: 0.5px solid ${p => p.theme.colors.main};
 
-  font-family: ${(p) => p.theme.fonts.main};
+  font-family: ${p => p.theme.fonts.main};
   font-style: italic;
   font-weight: 400;
   font-size: 14px;
   line-height: 1.24;
   letter-spacing: 0.01em;
 
-  color: ${(p) => p.theme.colors.text};
+  color: ${p => p.theme.colors.text};
 
-  @media screen and (min-width: ${(p) => p.theme.sizes.tablet}) {
+  @media screen and (min-width: ${p => p.theme.sizes.tablet}) {
     min-width: 141px;
     height: 52px;
     font-size: 26px;
-    border-right: 1px solid ${(p) => p.theme.colors.main};
+    border-right: 1px solid ${p => p.theme.colors.main};
   }
-  @media screen and (min-width: ${(p) => p.theme.sizes.desktop}) {
+  @media screen and (min-width: ${p => p.theme.sizes.desktop}) {
     min-width: 190px;
   }
   ${flexbox};
@@ -114,11 +110,11 @@ export const ChakraTableTitle = styled.p`
 
 export const List = styled.ul`
   background: rgba(255, 255, 255, 0.5);
-  border: 0.5px solid ${(p) => p.theme.colors.text};
+  border: 0.5px solid ${p => p.theme.colors.text};
   border-radius: 12px;
-  @media screen and (min-width: ${(p) => p.theme.sizes.tablet}) {
+  @media screen and (min-width: ${p => p.theme.sizes.tablet}) {
     border-radius: 22px;
-    border: 1px solid ${(p) => p.theme.colors.text};
+    border: 1px solid ${p => p.theme.colors.text};
   }
 `;
 
@@ -127,7 +123,7 @@ export const ChakraElement = styled.li`
   align-items: center;
   padding-left: 13px;
   border-bottom: 0.5px solid #9071af;
-  @media screen and (min-width: ${(p) => p.theme.sizes.tablet}) {
+  @media screen and (min-width: ${p => p.theme.sizes.tablet}) {
     border-bottom: 1px solid #9071af;
   }
   ${border}
@@ -142,12 +138,12 @@ export const Exclamation = styled.button`
   border-radius: 50%;
   margin-right: 15px;
 
-  font-family: ${(p) => p.theme.fonts.digits};
+  font-family: ${p => p.theme.fonts.digits};
   font-style: normal;
   font-weight: 600;
   font-size: 11px;
   line-height: 1.18;
-  color: ${(p) => p.theme.colors.main};
+  color: ${p => p.theme.colors.main};
   cursor: pointer;
   ${color}
   transition: all 250ms linear;
@@ -155,7 +151,7 @@ export const Exclamation = styled.button`
   &:focus {
     scale: 1.15;
   }
-  @media screen and (min-width: ${(p) => p.theme.sizes.tablet}) {
+  @media screen and (min-width: ${p => p.theme.sizes.tablet}) {
     width: 30px;
     height: 30px;
     font-size: 20px;
@@ -172,19 +168,19 @@ export const ChakraText = styled.p`
 
   border-right: 0.5px solid #9071af;
 
-  font-family: ${(p) => p.theme.fonts.digits};
+  font-family: ${p => p.theme.fonts.digits};
   font-weight: 400;
   font-size: 11px;
   line-height: 14px;
 
   color: #464646;
-  @media screen and (min-width: ${(p) => p.theme.sizes.tablet}) {
+  @media screen and (min-width: ${p => p.theme.sizes.tablet}) {
     height: 52px;
     min-width: 141px;
     border-right: 1px solid #9071af;
     font-size: 22px;
   }
-  @media screen and (min-width: ${(p) => p.theme.sizes.desktop}) {
+  @media screen and (min-width: ${p => p.theme.sizes.desktop}) {
     min-width: 190px;
   }
   ${flexbox};
@@ -201,10 +197,10 @@ export const Warning = styled.span`
   line-height: 1.18;
   letter-spacing: 0.01em;
   text-align: center;
-  @media screen and (min-width: ${(p) => p.theme.sizes.tablet}) {
+  @media screen and (min-width: ${p => p.theme.sizes.tablet}) {
     font-size: 22px;
   }
-  @media screen and (min-width: ${(p) => p.theme.sizes.desktop}) {
+  @media screen and (min-width: ${p => p.theme.sizes.desktop}) {
     font-size: 26px;
   }
 `;
@@ -221,18 +217,14 @@ export const TipHeaderBox = styled.div`
   align-items: center;
   justify-content: space-between;
   padding: 0px 15px 10px 10px;
-  background-image: linear-gradient(
-    to right,
-    #9072af 10%,
-    rgba(255, 255, 255, 0) 0%
-  );
+  background-image: linear-gradient(to right, #9072af 10%, rgba(255, 255, 255, 0) 0%);
   background-position: bottom;
   background-size: 10px 2px;
   background-repeat: repeat-x;
-  @media screen and (min-width: ${(p) => p.theme.sizes.tablet}) {
+  @media screen and (min-width: ${p => p.theme.sizes.tablet}) {
     padding: 0px 15px 15px 10px;
   }
-  @media screen and (min-width: ${(p) => p.theme.sizes.desktop}) {
+  @media screen and (min-width: ${p => p.theme.sizes.desktop}) {
   }
 `;
 
@@ -245,18 +237,18 @@ export const TipHeaderText = styled.p`
   font-weight: 400;
   line-height: 1.68;
   letter-spacing: 0.208px;
-  @media screen and (min-width: ${(p) => p.theme.sizes.tablet}) {
+  @media screen and (min-width: ${p => p.theme.sizes.tablet}) {
     font-size: 36px;
   }
-  @media screen and (min-width: ${(p) => p.theme.sizes.desktop}) {
+  @media screen and (min-width: ${p => p.theme.sizes.desktop}) {
   }
 `;
 
 export const ImgTip = styled.img`
-  @media screen and (min-width: ${(p) => p.theme.sizes.tablet}) {
+  @media screen and (min-width: ${p => p.theme.sizes.tablet}) {
     width: 50px;
   }
-  @media screen and (min-width: ${(p) => p.theme.sizes.desktop}) {
+  @media screen and (min-width: ${p => p.theme.sizes.desktop}) {
     width: 60px;
   }
 `;
@@ -270,20 +262,16 @@ export const TipGoalText = styled.p`
   letter-spacing: 0.077px;
   text-transform: lowercase;
   padding: 15px 12px;
-  background-image: linear-gradient(
-    to right,
-    #9072af 10%,
-    rgba(255, 255, 255, 0) 0%
-  );
+  background-image: linear-gradient(to right, #9072af 10%, rgba(255, 255, 255, 0) 0%);
   background-position: bottom;
   background-size: 10px 2px;
   background-repeat: repeat-x;
   text-align: right;
-  @media screen and (min-width: ${(p) => p.theme.sizes.tablet}) {
+  @media screen and (min-width: ${p => p.theme.sizes.tablet}) {
     padding: 15px 22px 15px 85px;
     font-size: 18px;
   }
-  @media screen and (min-width: ${(p) => p.theme.sizes.desktop}) {
+  @media screen and (min-width: ${p => p.theme.sizes.desktop}) {
   }
 `;
 
@@ -294,10 +282,10 @@ export const TipDesc = styled.p`
   font-weight: 300;
   line-height: 1.1;
   letter-spacing: 0.084px;
-  @media screen and (min-width: ${(p) => p.theme.sizes.tablet}) {
+  @media screen and (min-width: ${p => p.theme.sizes.tablet}) {
     font-size: 18px;
   }
-  @media screen and (min-width: ${(p) => p.theme.sizes.desktop}) {
+  @media screen and (min-width: ${p => p.theme.sizes.desktop}) {
   }
 `;
 
@@ -306,10 +294,10 @@ export const TipDescName = styled(TipDesc)`
   font-weight: 700;
   line-height: 1.68;
   letter-spacing: 0.103px;
-  @media screen and (min-width: ${(p) => p.theme.sizes.tablet}) {
+  @media screen and (min-width: ${p => p.theme.sizes.tablet}) {
     font-size: 22px;
   }
-  @media screen and (min-width: ${(p) => p.theme.sizes.desktop}) {
+  @media screen and (min-width: ${p => p.theme.sizes.desktop}) {
   }
 `;
 
@@ -319,7 +307,7 @@ export const AuthorLessonText = styled.p`
   font-weight: 600;
   line-height: 1.18;
   letter-spacing: 0.14px;
-  @media screen and (min-width: ${(p) => p.theme.sizes.tablet}) {
+  @media screen and (min-width: ${p => p.theme.sizes.tablet}) {
     font-size: 22px;
   }
 `;
@@ -332,12 +320,7 @@ export const AuthorLessonLink = styled.a`
   height: 29px;
 
   border-radius: 6px;
-  background: linear-gradient(
-    180deg,
-    #fff 19.44%,
-    #f5e9ff 52.78%,
-    #f7c8ff 100%
-  );
+  background: linear-gradient(180deg, #fff 19.44%, #f5e9ff 52.78%, #f7c8ff 100%);
 
   color: #9072af;
   text-align: center;
@@ -348,7 +331,7 @@ export const AuthorLessonLink = styled.a`
   letter-spacing: 0.158px;
   text-transform: uppercase;
   transition: all 0.3s ease;
-  @media screen and (min-width: ${(p) => p.theme.sizes.tablet}) {
+  @media screen and (min-width: ${p => p.theme.sizes.tablet}) {
     width: 220px;
     height: 48px;
 

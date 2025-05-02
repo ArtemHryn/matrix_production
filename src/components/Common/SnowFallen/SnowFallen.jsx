@@ -18,13 +18,7 @@ const SnowFallen = () => {
       setInit(true);
     });
   }, [init]);
-  return (
-    <div>
-      {init && (
-        <Particles options={snowConfig} style={{ pointerEvents: "none" }} />
-      )}
-    </div>
-  );
+  return <div>{init && <Particles options={snowConfig} />}</div>;
 };
 
 export default SnowFallen;

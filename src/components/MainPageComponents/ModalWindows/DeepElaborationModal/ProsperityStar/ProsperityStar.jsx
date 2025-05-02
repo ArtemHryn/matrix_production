@@ -83,7 +83,7 @@ export const ProsperityStar = () => {
             justifyContent={['space-between', 'flex-start']}
             pt={['25px', '40px']}
           >
-            <Price>$170</Price>
+            <Price>$150</Price>
             <BuyButton href="https://t.me/DariKarma">{t('buy')}</BuyButton>
           </Box>
         </Box>

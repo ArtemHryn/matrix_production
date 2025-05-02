@@ -78,7 +78,7 @@ export const getConsultationCardsList = lng => {
       text: lng === 'ua' ? 'Гроші \\Особистий бренд' : 'Деньги\\Личный бренд',
       imgtab: moneyCardTab,
       imgDesc: moneyCardDesc,
-      price: '$85',
+      price: '$70',
       info: {
         textBefore: lng === 'ua' ? [money1Ua] : [money1Ru],
         list:
@@ -109,7 +109,7 @@ export const getConsultationCardsList = lng => {
       text: lng === 'ua' ? 'Особисте життя' : 'Личная жизнь',
       imgtab: personalLifeTab,
       imgDesc: personalLifeDesc,
-      price: '$85',
+      price: '$70',
       component: PersonalLife,
     },
     {
@@ -117,7 +117,7 @@ export const getConsultationCardsList = lng => {
       text: lng === 'ua' ? 'Профорієнтація' : 'Профориентация',
       imgtab: proforientationTab,
       imgDesc: proforientationDesc,
-      price: '$85',
+      price: '$70',
       info: {
         textBefore:
           lng === 'ua'
@@ -186,7 +186,7 @@ export const getConsultationCardsList = lng => {
           : 'Детско-родительские отношения',
       imgtab: parentChildrenCardTab,
       imgDesc: parentChildrenCardDesc,
-      price: '$85',
+      price: '$70',
       component: ParentChildren,
     },
     {

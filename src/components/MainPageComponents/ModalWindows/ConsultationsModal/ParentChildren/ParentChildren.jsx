@@ -118,7 +118,7 @@ export const ParentChildren = ({ price }) => {
                   alignItems="center"
                   justifyContent={['space-between', 'flex-start']}
                 >
-                  <Price>$110</Price>
+                  <Price>$90</Price>
                   <BuyButton href="https://t.me/DariKarma">
                     {t('buy')}
                   </BuyButton>
