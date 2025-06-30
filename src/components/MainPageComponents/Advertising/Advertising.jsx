@@ -67,18 +67,23 @@ const Advertising = () => {
           <MiniCourse>МИНИ-КУРС</MiniCourse>
           <Title>"Код твоей реальности"</Title>
           <Psychology>Психологи — это кармологи? </Psychology>
-          <GetInfo>Узнай, как работает настоящая карма и Матрица Судьбы вместе!</GetInfo>
+          <GetInfo>
+            Узнай, как работает настоящая карма и Матрица Судьбы вместе!
+          </GetInfo>
         </TextWrapper>
       </div>
       <BottomWrapper>
         <LinkToCourse
-          href="https://course.dari-code.com.ua/?lang=ru"
+          href="https://dariadv-1023660347431.europe-west1.run.app/?lang=ru"
           target="_blank"
           rel="noopener noreferrer"
         >
           Подробнее о курсе
           <svg viewBox="0 0 4 4" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M3.20117 1.86726L0.573579 3.60487V0.129649L3.20117 1.86726Z" fill="#9071AF" />
+            <path
+              d="M3.20117 1.86726L0.573579 3.60487V0.129649L3.20117 1.86726Z"
+              fill="#9071AF"
+            />
           </svg>
         </LinkToCourse>
       </BottomWrapper>
