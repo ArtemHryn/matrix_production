@@ -8,11 +8,11 @@ export const BuyContainer = ({ price }) => {
     <Box
       display="flex"
       alignItems="center"
-      justifyContent={['space-between', 'flex-start']}
-      pt={['25px', '40px']}
+      justifyContent={["space-between", "flex-start"]}
+      pt={["25px", "40px"]}
     >
-      <Price>{price}</Price>
-      <BuyButton href="https://t.me/DariKarma">{t('buy')}</BuyButton>
+      <Price>&euro;{price}</Price>
+      <BuyButton href="https://t.me/DariKarma">{t("buy")}</BuyButton>
     </Box>
   );
 };

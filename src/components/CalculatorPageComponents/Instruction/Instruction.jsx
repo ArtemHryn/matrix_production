@@ -26,38 +26,39 @@ const Instruction = () => {
   const { t, i18n } = useTranslation('calc');
 
   return (
-    <Box as="section" py={['40px', null, '80px']} id="Instruction">
+    <Box as="section" py={["40px", null, "80px"]} id="Instruction">
       <Box
-        maxWidth={['400px', '768px', '1440px']}
-        px={['37px', '32px', '192px']}
+        maxWidth={["400px", "768px", "1440px"]}
+        px={["37px", "32px", "192px"]}
         m="0 auto"
         backgroundImage={[`url('${image}')`, null, null]}
-        backgroundSize={['300px', '460px', '700px']}
-        backgroundPosition={['70% 55%', '80% 80%', '60% 60%']}
+        backgroundSize={["300px", "460px", "700px"]}
+        backgroundPosition={["70% 55%", "80% 80%", "60% 60%"]}
         backgroundRepeat="no-repeat"
       >
         <Title>
-          <Trans i18nKey={'instructionTitle'} ns="calc">
-            Используй возможности калькулятора от <span>“Dari.Karma” на все 100%</span>
+          <Trans i18nKey={"instructionTitle"} ns="calc">
+            Используй возможности калькулятора от{" "}
+            <span>“Dari.Karma” на все 100%</span>
           </Trans>
         </Title>
         <Box position="relative">
           <Images />
           <BtnBlock
-            btnName={t('instructionBtn1')}
-            textAlign={['right', 'right']}
+            btnName={t("instructionBtn1")}
+            textAlign={["right", "right"]}
             display="flex"
-            flexDirection={['column', null, 'column-reverse']}
+            flexDirection={["column", null, "column-reverse"]}
             alignItems="flex-end"
-            mb={['211px', '345px', '193px']}
+            mb={["211px", "345px", "193px"]}
             setShowModal={setShowModal}
             setPage={() => setPage(1)}
           />
           <BtnBlock
-            btnName={t('instructionBtn2')}
-            mb={['53px', '103px']}
+            btnName={t("instructionBtn2")}
+            mb={["53px", "103px"]}
             display="flex"
-            flexDirection={['column']}
+            flexDirection={["column"]}
             setShowModal={setShowModal}
             setPage={() => setPage(2)}
           />
@@ -69,22 +70,22 @@ const Instruction = () => {
               <ModalContainer setShowModal={setShowModal}>
                 <AnimatePresence onExitComplete={() => null} mode="wait">
                   <ModalContent
-                    title={t('instructionModalTitle1')}
+                    title={t("instructionModalTitle1")}
                     description={
-                      i18n.language === 'ua'
+                      i18n.language === "ua"
                         ? instruction_description_ua
                         : instruction_description_ru
                     }
                     page={page}
                     setPage={setPage}
-                    key={'1'}
-                    price={'75$'}
+                    key={"1"}
+                    price={"75€"}
                     href={
-                      i18n.language === 'ua'
-                        ? 'https://www.buymeacoffee.com/dari.karma/e/155304'
-                        : 'https://www.buymeacoffee.com/dari.karma/e/154970'
+                      i18n.language === "ua"
+                        ? "https://www.buymeacoffee.com/dari.karma/e/155304"
+                        : "https://www.buymeacoffee.com/dari.karma/e/154970"
                     }
-                    linkText={t('instructionModalBtn1')}
+                    linkText={t("instructionModalBtn1")}
                   />
                 </AnimatePresence>
               </ModalContainer>
@@ -92,15 +93,17 @@ const Instruction = () => {
               <ModalContainer setShowModal={setShowModal}>
                 <AnimatePresence onExitComplete={() => null} mode="wait">
                   <ModalContent
-                    title={t('instructionModalTitle2')}
+                    title={t("instructionModalTitle2")}
                     description={
-                      i18n.language === 'ua' ? integrity_description_ua : integrity_description_ru
+                      i18n.language === "ua"
+                        ? integrity_description_ua
+                        : integrity_description_ru
                     }
                     page={page}
                     setPage={setPage}
-                    key={'2'}
-                    href={'https://www.buymeacoffee.com/dari.karma/e/157070'}
-                    linkText={t('instructionModalBtn2')}
+                    key={"2"}
+                    href={"https://www.buymeacoffee.com/dari.karma/e/157070"}
+                    linkText={t("instructionModalBtn2")}
                   />
                 </AnimatePresence>
               </ModalContainer>

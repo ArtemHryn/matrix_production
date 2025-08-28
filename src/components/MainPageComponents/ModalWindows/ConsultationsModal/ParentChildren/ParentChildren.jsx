@@ -17,56 +17,56 @@ export const ParentChildren = ({ price }) => {
   const { t } = useTranslation('modals');
   return (
     <>
-      <MainTitle display={['none', 'none', 'block']}>
-        {t('parentChildren.title')}
+      <MainTitle display={["none", "none", "block"]}>
+        {t("parentChildren.title")}
       </MainTitle>
-      <Box display={[null, null, 'flex']}>
+      <Box display={[null, null, "flex"]}>
         <Box
           pb="30px"
-          backgroundImage={[dotGradient, dotGradient, 'none']}
+          backgroundImage={[dotGradient, dotGradient, "none"]}
           backgroundPosition="bottom"
           backgroundSize="15px 2px"
           backgroundRepeat="repeat-x"
-          mr={[null, null, '100px']}
-          width={[null, null, 'calc((100% - 100px) / 2)']}
+          mr={[null, null, "100px"]}
+          width={[null, null, "calc((100% - 100px) / 2)"]}
         >
-          <MainTitle display={[null, null, 'none']}>
-            {t('parentChildren.title')}
+          <MainTitle display={[null, null, "none"]}>
+            {t("parentChildren.title")}
           </MainTitle>
           <Requests>
-            <strong>{t('requests')}</strong>
+            <strong>{t("requests")}</strong>
           </Requests>
-          <Text>{t('parentChildren.listTitle')}</Text>
+          <Text>{t("parentChildren.listTitle")}</Text>
           <List>
             <li>
-              <Text>{t('parentChildren.listEl1')}</Text>
+              <Text>{t("parentChildren.listEl1")}</Text>
             </li>
             <li>
-              <Text>{t('parentChildren.listEl2')}</Text>
+              <Text>{t("parentChildren.listEl2")}</Text>
             </li>
             <li>
-              <Text>{t('parentChildren.listEl3')}</Text>
+              <Text>{t("parentChildren.listEl3")}</Text>
             </li>
             <li>
-              <Text>{t('parentChildren.listEl4')}</Text>
+              <Text>{t("parentChildren.listEl4")}</Text>
             </li>
             <li>
-              <Text>{t('parentChildren.listEl5')}</Text>
+              <Text>{t("parentChildren.listEl5")}</Text>
             </li>
             <li>
-              <Text>{t('parentChildren.listEl6')}</Text>
+              <Text>{t("parentChildren.listEl6")}</Text>
             </li>
             <li>
-              <Text>{t('parentChildren.listEl7')}</Text>
+              <Text>{t("parentChildren.listEl7")}</Text>
             </li>
           </List>
         </Box>
         <Box>
           <Box
-            display={[null, null, 'flex']}
+            display={[null, null, "flex"]}
             alignItems="center"
-            py={['25px', '40px']}
-            flexDirection={[null, null, 'column']}
+            py={["25px", "40px"]}
+            flexDirection={[null, null, "column"]}
           >
             <Box
               width="100%"
@@ -74,53 +74,53 @@ export const ParentChildren = ({ price }) => {
               backgroundPosition="bottom"
               backgroundSize="15px 2px"
               backgroundRepeat="repeat-x"
-              pb={['25px', '40px']}
+              pb={["25px", "40px"]}
             >
               <HowIsGoingConsultation>
-                {t('howIsGoingCons')}
+                {t("howIsGoingCons")}
               </HowIsGoingConsultation>
-              <Text mb={['20px', '0px']}>
-                {t('parentChildren.videoMeeting')}
+              <Text mb={["20px", "0px"]}>
+                {t("parentChildren.videoMeeting")}
               </Text>
             </Box>
-            <Box pt={['25px', '25px', '25px']} display={[null, 'flex']}>
+            <Box pt={["25px", "25px", "25px"]} display={[null, "flex"]}>
               <Box
-                mb={['25px', '0px']}
-                mr={[null, '25px']}
-                width={[null, 'calc((100% - 42px) / 2)']}
-                display={[null, 'flex']}
+                mb={["25px", "0px"]}
+                mr={[null, "25px"]}
+                width={[null, "calc((100% - 42px) / 2)"]}
+                display={[null, "flex"]}
                 flexDirection="column"
                 justifyContent="space-between"
               >
-                <Text mb="15px">{t('parentChildren.additionalInfo1')}</Text>
+                <Text mb="15px">{t("parentChildren.additionalInfo1")}</Text>
                 <Box
                   display="flex"
                   alignItems="center"
-                  justifyContent={['space-between', 'flex-start']}
+                  justifyContent={["space-between", "flex-start"]}
                 >
-                  <Price>{price}</Price>
+                  <Price>&euro;{price}</Price>
                   <BuyButton href="https://t.me/DariKarma">
-                    {t('buy')}
+                    {t("buy")}
                   </BuyButton>
                 </Box>
               </Box>
               <Box
-                width={[null, 'calc((100% - 42px) / 2)']}
-                display={[null, 'flex']}
+                width={[null, "calc((100% - 42px) / 2)"]}
+                display={[null, "flex"]}
                 flexDirection="column"
                 justifyContent="space-between"
               >
-                <Text mb="15px" maxWidth={[null, null, '230px']}>
-                  {t('parentChildren.additionalInfo2')}
+                <Text mb="15px" maxWidth={[null, null, "230px"]}>
+                  {t("parentChildren.additionalInfo2")}
                 </Text>
                 <Box
                   display="flex"
                   alignItems="center"
-                  justifyContent={['space-between', 'flex-start']}
+                  justifyContent={["space-between", "flex-start"]}
                 >
-                  <Price>$90</Price>
+                  <Price>&euro;90</Price>
                   <BuyButton href="https://t.me/DariKarma">
-                    {t('buy')}
+                    {t("buy")}
                   </BuyButton>
                 </Box>
               </Box>

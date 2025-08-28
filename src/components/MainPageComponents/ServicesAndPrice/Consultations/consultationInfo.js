@@ -78,7 +78,7 @@ export const getConsultationCardsList = lng => {
       text: lng === 'ua' ? 'Гроші \\Особистий бренд' : 'Деньги\\Личный бренд',
       imgtab: moneyCardTab,
       imgDesc: moneyCardDesc,
-      price: '$70',
+      price: '70',
       info: {
         textBefore: lng === 'ua' ? [money1Ua] : [money1Ru],
         list:
@@ -109,7 +109,7 @@ export const getConsultationCardsList = lng => {
       text: lng === 'ua' ? 'Особисте життя' : 'Личная жизнь',
       imgtab: personalLifeTab,
       imgDesc: personalLifeDesc,
-      price: '$70',
+      price: '70',
       component: PersonalLife,
     },
     {
@@ -117,7 +117,7 @@ export const getConsultationCardsList = lng => {
       text: lng === 'ua' ? 'Профорієнтація' : 'Профориентация',
       imgtab: proforientationTab,
       imgDesc: proforientationDesc,
-      price: '$70',
+      price: '70',
       info: {
         textBefore:
           lng === 'ua'
@@ -150,7 +150,7 @@ export const getConsultationCardsList = lng => {
       text: lng === 'ua' ? 'Матриця періоду' : 'Матрица периода',
       imgtab: periodCardTab,
       imgDesc: periodCardDesc,
-      price: '$28',
+      price: '28',
       info: {
         textBefore:
           lng === 'ua'
@@ -167,7 +167,7 @@ export const getConsultationCardsList = lng => {
       text: lng === 'ua' ? 'Усвідомленість' : 'Осознанность',
       imgtab: conscienceCardTab,
       imgDesc: conscienceCardDesc,
-      price: '$100',
+      price: '100',
       component: Conscience,
     },
     {
@@ -175,7 +175,7 @@ export const getConsultationCardsList = lng => {
       text: lng === 'ua' ? 'Парна терапія' : 'Парная терапия',
       imgtab: couplesTherapyCardTab,
       imgDesc: couplesTherapyCardDesc,
-      price: '$150',
+      price: '150',
       component: CoupleTherapy,
     },
     {
@@ -186,7 +186,7 @@ export const getConsultationCardsList = lng => {
           : 'Детско-родительские отношения',
       imgtab: parentChildrenCardTab,
       imgDesc: parentChildrenCardDesc,
-      price: '$70',
+      price: '70',
       component: ParentChildren,
     },
     {
@@ -194,7 +194,7 @@ export const getConsultationCardsList = lng => {
       text: lng === 'ua' ? 'Матриця “Демон-Жертва”' : 'Матрица “Демон-Жертва”',
       imgtab: demonOfferingCardTab,
       imgDesc: demonOfferingCardDesc,
-      price: '$100',
+      price: '100',
       info: {
         textBefore:
           lng === 'ua'
@@ -234,7 +234,7 @@ export const getConsultationCardsList = lng => {
       text: lng === 'ua' ? 'Прогноз на рік' : ' Прогноз на год ',
       imgtab: yearCardTab,
       imgDesc: yearCardDesc,
-      price: '$42',
+      price: '42',
       component: YearModal,
     },
     {

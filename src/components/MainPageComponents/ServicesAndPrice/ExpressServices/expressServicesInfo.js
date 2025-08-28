@@ -84,7 +84,7 @@ export const getExpressServiceCards = lng => {
           : 'Диагностика состояния матрицы',
       imgTab: card1Tab,
       imgDesc: card1Desc,
-      price: '$23',
+      price: '23',
       info: {
         textBefore:
           lng === 'ua'
@@ -115,7 +115,7 @@ export const getExpressServiceCards = lng => {
           : 'Подбор благоприятной даты, периода',
       imgTab: card3Tab,
       imgDesc: card3Desc,
-      price: '$17',
+      price: '17',
       info: {
         textBefore:
           lng === 'ua'
@@ -131,7 +131,7 @@ export const getExpressServiceCards = lng => {
       text: lng === 'ua' ? 'Сумісність' : 'Совместимость',
       imgTab: card2Tab,
       imgDesc: card2Desc,
-      price: '$23',
+      price: '23',
       info: {
         textBefore: lng === 'ua' ? [textBeforeCard2aUa] : [textBeforeCard2aRu],
         list:
@@ -163,7 +163,7 @@ export const getExpressServiceCards = lng => {
         lng === 'ua' ? 'Енергії тривалої дії' : 'Энергии длительного действия',
       imgTab: card4Tab,
       imgDesc: card4Desc,
-      price: '$7',
+      price: '7',
       info: {
         textBefore:
           lng === 'ua'
