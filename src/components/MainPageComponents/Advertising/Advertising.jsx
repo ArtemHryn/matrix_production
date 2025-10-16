@@ -74,7 +74,7 @@ const Advertising = () => {
       </div>
       <BottomWrapper>
         <LinkToCourse
-          href="https://dariadv-1023660347431.europe-west1.run.app/?lang=ru"
+          href="https://course.dari-code.com.ua/?lang=ru"
           target="_blank"
           rel="noopener noreferrer"
         >
