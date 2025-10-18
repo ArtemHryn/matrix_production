@@ -74,7 +74,7 @@ const Advertising = () => {
       </div>
       <BottomWrapper>
         <LinkToCourse
-          href="https://course.dari-code.com.ua/?lang=ru"
+          href="https://beacons.ai/darikarma.course/minicourse"
           target="_blank"
           rel="noopener noreferrer"
         >
