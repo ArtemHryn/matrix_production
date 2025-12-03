@@ -84,7 +84,7 @@ export const getExpressServiceCards = lng => {
           : 'Диагностика состояния матрицы',
       imgTab: card1Tab,
       imgDesc: card1Desc,
-      price: '23',
+      price: '38',
       info: {
         textBefore:
           lng === 'ua'
