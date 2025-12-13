@@ -1,28 +1,30 @@
-import { Navigate, useLocation } from 'react-router-dom';
-import { lazy, Suspense } from 'react';
+import { Navigate, useLocation } from "react-router-dom";
+import { lazy, Suspense } from "react";
 
-import { Box } from './Box';
-import { Route, Routes } from 'react-router-dom';
-import { Spinner } from './Spinner/Spinner';
-import ScrollToTop from './Common/ScrollToTop';
-import Advertising from './MainPageComponents/Advertising/Advertising';
+import { Box } from "./Box";
+import { Route, Routes } from "react-router-dom";
+import { Spinner } from "./Spinner/Spinner";
+import ScrollToTop from "./Common/ScrollToTop";
+import AdvContainer from "./MainPageComponents/Advertising/AdvContainer";
 
-const Main = lazy(() => import('pages/Main'));
-const Calculator = lazy(() => import('pages/Calculator'));
-const PersonalMatrix = lazy(() => import('../pages/PersonalMatrix'));
-const CompatibilityMatrix = lazy(() => import('../pages/CompatibilityMatrix'));
-const DeepMatrix = lazy(() => import('../pages/DeepMatrix'));
-const GenericPageCalc = lazy(() => import('pages/GenericPageCalc'));
-const RisingStarPageCalc = lazy(() => import('pages/RisingStarPageCalc'));
-const ParentsAndChildrenPageCalc = lazy(() => import('pages/ParentsAndChildrenPageCalc'));
-const LightGatePageCalc = lazy(() => import('pages/LightGatePageCalc'));
+const Main = lazy(() => import("pages/Main"));
+const Calculator = lazy(() => import("pages/Calculator"));
+const PersonalMatrix = lazy(() => import("../pages/PersonalMatrix"));
+const CompatibilityMatrix = lazy(() => import("../pages/CompatibilityMatrix"));
+const DeepMatrix = lazy(() => import("../pages/DeepMatrix"));
+const GenericPageCalc = lazy(() => import("pages/GenericPageCalc"));
+const RisingStarPageCalc = lazy(() => import("pages/RisingStarPageCalc"));
+const ParentsAndChildrenPageCalc = lazy(() =>
+  import("pages/ParentsAndChildrenPageCalc")
+);
+const LightGatePageCalc = lazy(() => import("pages/LightGatePageCalc"));
 
 export const App = () => {
   const location = useLocation();
 
   return (
-    <Box m="0 auto" position="relative">
-      <Advertising />
+    <Box m="0 auto" position="relative" overflow="hidden">
+      <AdvContainer />
       <ScrollToTop />
       <Suspense fallback={<Spinner />}>
         <Routes key={location.pathname} location={location}>
@@ -34,7 +36,10 @@ export const App = () => {
               <Route index element={<Navigate to="generic" />} />
               <Route path="generic" element={<GenericPageCalc />} />
               <Route path="rising_star" element={<RisingStarPageCalc />} />
-              <Route path="parents_and_children" element={<ParentsAndChildrenPageCalc />} />
+              <Route
+                path="parents_and_children"
+                element={<ParentsAndChildrenPageCalc />}
+              />
               <Route path="light_gate" element={<LightGatePageCalc />} />
             </Route>
           </Route>

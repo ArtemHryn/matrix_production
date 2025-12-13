@@ -32,13 +32,13 @@ const PersonalMatrix = () => {
 
   const getMatrixComponent = () => {
     switch (matrixType) {
-      case 'fateMatrix':
+      case "fateMatrix":
         return <FateMatrix />;
-      case 'karmaIssues':
+      case "karmaIssues":
         return <KarmaIssues />;
-      case 'healthMatrix':
+      case "healthMatrix":
         return <HealthMatrix />;
-      case 'prognosis':
+      case "prognostic":
         return <PeriodMatrix />;
       default:
         break;

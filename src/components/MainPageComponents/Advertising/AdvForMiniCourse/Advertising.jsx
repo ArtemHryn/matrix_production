@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
 import {
   AdvertisingContainer,
   BottomWrapper,
@@ -11,20 +11,20 @@ import {
   Psychology,
   TextWrapper,
   Title,
-} from './Advertising.styled';
-import CloseBtnSvg from './CloseBtnSvg';
+} from "./Advertising.styled";
+import CloseBtnSvg from "./CloseBtnSvg";
 
-import AdvertisingImg from 'images/Advertising/advertising.webp';
-import matrix from 'images/Advertising/matrix.webp';
+import AdvertisingImg from "images/Advertising/advertising.webp";
+import matrix from "images/Advertising/matrix.webp";
 
 const Advertising = () => {
   const [visible, setVisible] = useState(false);
 
   const now = new Date();
-  const cutoff = new Date('2026-01-01T00:00:00');
+  const cutoff = new Date("2026-01-01T00:00:00");
 
   useEffect(() => {
-    const closedAt = localStorage.getItem('closedAt');
+    const closedAt = localStorage.getItem("closedAt");
     if (!closedAt) {
       setTimeout(() => {
         setVisible(true);
@@ -41,14 +41,14 @@ const Advertising = () => {
 
   const onClose = () => {
     setVisible(false);
-    const closedAt = localStorage.getItem('closedAt');
+    const closedAt = localStorage.getItem("closedAt");
 
     const now = new Date();
 
     const minutesToAdd = closedAt ? 60 : 10;
     const futureTime = new Date(now.getTime() + minutesToAdd * 60 * 1000); // +10 хвилин
 
-    localStorage.setItem('closedAt', futureTime.toISOString());
+    localStorage.setItem("closedAt", futureTime.toISOString());
   };
 
   if (now > cutoff) {
