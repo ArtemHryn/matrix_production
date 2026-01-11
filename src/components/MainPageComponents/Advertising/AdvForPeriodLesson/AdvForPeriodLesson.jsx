@@ -23,7 +23,7 @@ const AdvForPeriodLesson = () => {
   const [visible, setVisible] = useState(false);
 
   const now = new Date();
-  const cutoff = new Date("2026-01-01T00:00:00");
+  const cutoff = new Date("2026-05-15T00:00:00");
 
   useEffect(() => {
     const closedAt = localStorage.getItem("closedAt");

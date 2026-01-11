@@ -8,7 +8,7 @@ const AdvContainer = () => {
   const type = params.get("type");
   const showAdv = Math.random() < 0.7;
 
-  if (type === "prognostic") return <AdvForPeriodLesson />;
+  if (type === "year_matrix") return <AdvForPeriodLesson />;
 
   return <>{showAdv ? <AdvForPeriodLesson /> : <Advertising />}</>;
 };

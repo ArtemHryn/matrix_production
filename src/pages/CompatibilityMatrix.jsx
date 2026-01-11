@@ -1,35 +1,44 @@
-import { lazy, useEffect, useState } from 'react';
-import { Box } from 'components/Box';
+import { lazy, useEffect, useState } from "react";
+import { Box } from "components/Box";
 import {
   BtnItem,
   BtnList,
   Link,
-} from '../components/CalculatorPageComponents/PersonalMatrix/MatrixBtn/MatrixBtn.styled';
-import { useMatrix } from 'pages/Calculator';
-import MatrixLoader from 'components/Spinner/MatrixLoader';
-import btnList from 'helper/compatibilityCalcButtonList';
-import { useTranslation } from 'react-i18next';
+} from "../components/CalculatorPageComponents/PersonalMatrix/MatrixBtn/MatrixBtn.styled";
+import { useMatrix } from "pages/Calculator";
+import MatrixLoader from "components/Spinner/MatrixLoader";
+import btnList from "helper/compatibilityCalcButtonList";
+import { useTranslation } from "react-i18next";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const Partners = lazy(() =>
-  import('../components/CalculatorPageComponents/CompatibilityMatrix/Partners/Partners')
+  import(
+    "../components/CalculatorPageComponents/CompatibilityMatrix/Partners/Partners"
+  )
 );
 const Team = lazy(() =>
-  import('../components/CalculatorPageComponents/CompatibilityMatrix/Team/Team')
+  import("../components/CalculatorPageComponents/CompatibilityMatrix/Team/Team")
 );
 const Annual = lazy(() =>
-  import('../components/CalculatorPageComponents/CompatibilityMatrix/Annual/Annual')
+  import(
+    "../components/CalculatorPageComponents/CompatibilityMatrix/Annual/Annual"
+  )
 );
 const Demon = lazy(() =>
-  import('../components/CalculatorPageComponents/CompatibilityMatrix/Demon/Demon')
+  import(
+    "../components/CalculatorPageComponents/CompatibilityMatrix/Demon/Demon"
+  )
 );
 
 const CompatibilityMatrix = () => {
-  const [compatibilityType, setCompatibilityType] = useState('partners');
+  const [compatibilityType, setCompatibilityType] = useState("partners");
   const { setShowMatrix, setPartnersDate } = useMatrix();
   const [showSpinner, setShowSpinner] = useState(true);
   const { i18n } = useTranslation();
+  const navigate = useNavigate();
+  const location = useLocation();
 
-  const onChangeCal = type => {
+  const onChangeCal = (type) => {
     setCompatibilityType(type);
     setShowMatrix(false);
     setPartnersDate([]);
@@ -41,44 +50,48 @@ const CompatibilityMatrix = () => {
 
   useEffect(() => {
     const section = document.getElementById(`compatibility`);
-    section.scrollIntoView({ behavior: 'smooth' });
+    section.scrollIntoView({ behavior: "smooth" });
     const timer = setTimeout(() => {
       setShowSpinner(false);
     }, 500);
-
+    if (location.search) {
+      navigate(location.pathname, { replace: true });
+    }
     return () => clearTimeout(timer);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const getMatrixType = () => {
     switch (compatibilityType) {
-      case 'partners':
+      case "partners":
         return <Partners />;
-      case 'team':
+      case "team":
         return <Team />;
-      case 'year_matrix':
+      case "year_matrix":
         return <Annual />;
-      case 'demon':
+      case "demon":
         return <Demon />;
       default:
         break;
     }
   };
   return (
-    <Box as="section" py={['40px', null, '35px']} id="compatibility">
+    <Box as="section" py={["40px", null, "35px"]} id="compatibility">
       <Box
-        maxWidth={['400px', '768px', '1440px']}
+        maxWidth={["400px", "768px", "1440px"]}
         position="relative"
-        px={['15px', '32px', '60px']}
+        px={["15px", "32px", "60px"]}
         m="0 auto"
       >
         <BtnList>
           {btnList(i18n.language).map(({ name, type }) => (
             <BtnItem key={name}>
-              {' '}
+              {" "}
               <Link
-                className={compatibilityType === type ? 'active' : null}
+                className={compatibilityType === type ? "active" : null}
                 onClick={() => {
                   onChangeCal(type);
+                  navigate(`?type=${type}`);
                 }}
               >
                 {name}
