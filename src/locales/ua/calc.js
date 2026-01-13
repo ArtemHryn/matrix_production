@@ -20,7 +20,7 @@ const calcUa = {
   getPDFTemplateHowTo1: 'Долучайся до сторінки',
   getPDFTemplateHowTo2: 'та напиши в особисті повідомлення кодову фразу “Хочу Шаблони”',
   footerPoliticText1: 'Політика конфіденційності',
-  footerPoliticText2: 'Дизайн сайту by aleomore і dari.karma',
+  footerPoliticText2: 'Розроблено командою dari.karma',
   fullOverlapCheckbox: 'Техніка повного накладання матриць',
   method2023: 'Техніка накладання 8 карм',
   personalMatrixCalc: 'розрахувати',

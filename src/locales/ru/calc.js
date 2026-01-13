@@ -19,7 +19,7 @@ const calcRu = {
   getPDFTemplateHowTo1: 'Подписывайся на',
   getPDFTemplateHowTo2: 'и пиши в личные сообщения кодовую фразу “Хочу Шаблоны”',
   footerPoliticText1: 'Политика конфиденциальности',
-  footerPoliticText2: 'Дизайн сайта by aleomore и dari.karma',
+  footerPoliticText2: 'Разработано командой dari.karma',
   fullOverlapCheckbox: 'Техника полного наложения матриц',
   method2023: 'Техника наложения 8 карм',
   personalMatrixCalc: 'Рассчитать',

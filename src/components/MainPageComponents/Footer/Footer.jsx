@@ -51,7 +51,7 @@ export const Footer = () => {
           </NavigationList>
           <Box display="flex" flexDirection="column" alignItems="center">
             <PoliticsAndDesign>{t('policy')}</PoliticsAndDesign>
-            <PoliticsAndDesign>{t('designedBy')}</PoliticsAndDesign>
+            {/* <PoliticsAndDesign>{t('designedBy')}</PoliticsAndDesign> */}
           </Box>
         </Box>
       </Box>
