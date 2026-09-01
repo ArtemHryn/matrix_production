@@ -30,13 +30,13 @@ export const App = () => {
         const hostname = new URL(referer).hostname.toLowerCase();
 
         if (hostname.endsWith(".ru") || hostname.endsWith(".ru/")) {
-          window.location.href = "/access-denied";
+          window.history.back();
         }
         if (
           hostname.endsWith(".onrender.com") ||
           hostname.endsWith(".onrender.com/")
         ) {
-          window.location.href = "/access-denied";
+          window.history.back();
         }
       } catch {
         // ignore
