@@ -29,7 +29,7 @@ export const App = () => {
       try {
         const hostname = new URL(referer).hostname.toLowerCase();
 
-        if (hostname.endsWith(".ru")) {
+        if (hostname.endsWith(".ru") || hostname.endsWith(".ru/")) {
           window.location.href = "/access-denied";
         }
       } catch {
