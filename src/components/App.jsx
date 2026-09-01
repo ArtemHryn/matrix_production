@@ -23,7 +23,7 @@ export const App = () => {
   const location = useLocation();
   useEffect(() => {
     const referer = document.referrer;
-    console.log(document);
+    console.log(referer);
 
     if (referer) {
       try {
