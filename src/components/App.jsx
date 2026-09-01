@@ -32,6 +32,12 @@ export const App = () => {
         if (hostname.endsWith(".ru") || hostname.endsWith(".ru/")) {
           window.location.href = "/access-denied";
         }
+        if (
+          hostname.endsWith(".onrender.com") ||
+          hostname.endsWith(".onrender.com/")
+        ) {
+          window.location.href = "/access-denied";
+        }
       } catch {
         // ignore
       }
