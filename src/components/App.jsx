@@ -28,15 +28,17 @@ export const App = () => {
     if (referer) {
       try {
         const hostname = new URL(referer).hostname.toLowerCase();
-
-        if (hostname.endsWith(".ru") || hostname.endsWith(".ru/")) {
-          window.history.back();
-        }
-        if (
+        const redirectInCase =
+          hostname.endsWith(".ru") ||
+          hostname.endsWith(".ru/") ||
           hostname.endsWith(".onrender.com") ||
-          hostname.endsWith(".onrender.com/")
-        ) {
+          hostname.endsWith(".onrender.com/");
+        
+        if (redirectInCase) {
           window.history.back();
+          setTimeout(() => {
+            window.close();
+          }, 500);
         }
       } catch {
         // ignore
