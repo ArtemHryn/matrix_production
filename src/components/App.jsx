@@ -1,5 +1,5 @@
 import { Navigate, useLocation } from "react-router-dom";
-import { lazy, Suspense } from "react";
+import { lazy, Suspense, useEffect } from "react";
 
 import { Box } from "./Box";
 import { Route, Routes } from "react-router-dom";
@@ -14,14 +14,29 @@ const CompatibilityMatrix = lazy(() => import("../pages/CompatibilityMatrix"));
 const DeepMatrix = lazy(() => import("../pages/DeepMatrix"));
 const GenericPageCalc = lazy(() => import("pages/GenericPageCalc"));
 const RisingStarPageCalc = lazy(() => import("pages/RisingStarPageCalc"));
-const ParentsAndChildrenPageCalc = lazy(() =>
-  import("pages/ParentsAndChildrenPageCalc")
+const ParentsAndChildrenPageCalc = lazy(
+  () => import("pages/ParentsAndChildrenPageCalc"),
 );
 const LightGatePageCalc = lazy(() => import("pages/LightGatePageCalc"));
 
 export const App = () => {
   const location = useLocation();
+  useEffect(() => {
+    const referer = document.referrer;
+    console.log(document);
 
+    if (referer) {
+      try {
+        const hostname = new URL(referer).hostname.toLowerCase();
+
+        if (hostname.endsWith(".ru")) {
+          window.location.href = "/access-denied";
+        }
+      } catch {
+        // ignore
+      }
+    }
+  }, []);
   return (
     <Box m="0 auto" position="relative" overflow="hidden">
       <AdvContainer />
