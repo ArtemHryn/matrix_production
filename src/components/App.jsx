@@ -1,5 +1,5 @@
 import { Navigate, useLocation } from "react-router-dom";
-import { lazy, Suspense, useEffect } from "react";
+import { lazy, Suspense, useEffect, useState } from "react";
 
 import { Box } from "./Box";
 import { Route, Routes } from "react-router-dom";
@@ -21,30 +21,40 @@ const LightGatePageCalc = lazy(() => import("pages/LightGatePageCalc"));
 
 export const App = () => {
   const location = useLocation();
+  const [showPage, setShowPage] = useState(false);
   useEffect(() => {
     const referer = document.referrer;
-    console.log(referer);
 
     if (referer) {
       try {
         const hostname = new URL(referer).hostname.toLowerCase();
+        console.log("hostname1: ", hostname);
+
         const redirectInCase =
           hostname.endsWith(".ru") ||
           hostname.endsWith(".ru/") ||
           hostname.endsWith(".onrender.com") ||
           hostname.endsWith(".onrender.com/");
-        
+
         if (redirectInCase) {
           window.history.back();
           setTimeout(() => {
             window.close();
           }, 500);
         }
+        console.log("hostname:", hostname);
+
+        if (!redirectInCase) setShowPage(true);
       } catch {
         // ignore
       }
+    } else {
+      setShowPage(true);
     }
   }, []);
+
+  if (!showPage) return null;
+
   return (
     <Box m="0 auto" position="relative" overflow="hidden">
       <AdvContainer />
