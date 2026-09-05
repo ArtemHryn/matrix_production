@@ -38,7 +38,7 @@ const Instruction = () => {
       >
         <Title>
           <Trans i18nKey={"instructionTitle"} ns="calc">
-            Используй возможности калькулятора от{" "}
+            Используй возможности калькулятора от
             <span>“Dari.Karma” на все 100%</span>
           </Trans>
         </Title>

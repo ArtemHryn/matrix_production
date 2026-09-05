@@ -32,7 +32,6 @@ export const Title = styled.h1`
   text-wrap: balance;
   & > span {
     font-family: ${p => p.theme.fonts.title};
-    color: #592e85;
   }
   @media screen and (min-width: ${p => p.theme.sizes.tablet}) {
     font-size: 102px;
