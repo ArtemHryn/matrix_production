@@ -10,12 +10,10 @@ import "i18n.js";
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
-      <BrowserRouter basename={process.env.PUBLIC_URL}>
+      <BrowserRouter>
         <GlobalStyle />
         <App />
       </BrowserRouter>
     </ThemeProvider>
   </React.StrictMode>,
 );
-
-console.log("PUBLIC", process.env.PUBLIC_URL);
