@@ -31,10 +31,7 @@ export const App = () => {
         console.log("hostname1: ", hostname);
 
         const redirectInCase =
-          hostname.endsWith(".ru") ||
-          hostname.endsWith(".ru/") ||
-          hostname.endsWith(".onrender.com") ||
-          hostname.endsWith(".onrender.com/");
+          hostname.endsWith(".ru") || hostname.endsWith(".ru/");
 
         if (redirectInCase) {
           window.history.back();
