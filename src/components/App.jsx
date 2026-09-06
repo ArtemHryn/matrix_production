@@ -28,7 +28,6 @@ export const App = () => {
     if (referer) {
       try {
         const hostname = new URL(referer).hostname.toLowerCase();
-        console.log("hostname1: ", hostname);
 
         const redirectInCase =
           hostname.endsWith(".ru") || hostname.endsWith(".ru/");
@@ -39,8 +38,6 @@ export const App = () => {
             window.close();
           }, 500);
         }
-        console.log("hostname:", hostname);
-
         if (!redirectInCase) setShowPage(true);
       } catch {
         // ignore

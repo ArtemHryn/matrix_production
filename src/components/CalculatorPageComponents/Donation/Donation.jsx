@@ -13,6 +13,7 @@ import { ReactComponent as MonoLogo } from "images/Calculator/Donation/monoLogo.
 import { ReactComponent as MonoText } from "images/Calculator/Donation/monoText.svg";
 import { ReactComponent as Moon } from "images/Calculator/Donation/moonOrnament.svg";
 import { ReactComponent as Telegram } from "images/Calculator/Donation/telegramLogo.svg";
+import { ReactComponent as WFP } from "images/Calculator/Donation/WayForPay.svg";
 
 const gradients = [
   "radial-gradient(circle, rgba(173,93,201,0.3) 30%, rgba(255,255,255,0.01) 60%)",
@@ -52,7 +53,7 @@ const Donation = () => {
             order={[null, null, 1]}
             width={["160px", "359px"]}
           >
-            <Telegram width={'15%'} />
+            <Telegram width={"15%"} />
             <TGBot>Telegram Bot</TGBot>
           </DonationLink>
           {/* Buy me a coffee */}
@@ -82,6 +83,13 @@ const Donation = () => {
             order={[null, null, 3]}
           >
             <PayPal height="60%" />
+          </DonationLink>
+          <DonationLink
+            href="https://secure.wayforpay.com/sub/matrix_subcribtion"
+            target="_blank"
+            order={[null, null, 4]}
+          >
+            <WFP height="50%" />
           </DonationLink>
         </Box>
         <MoonContainer
