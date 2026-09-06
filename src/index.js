@@ -18,4 +18,4 @@ ReactDOM.createRoot(document.getElementById("root")).render(
   </React.StrictMode>,
 );
 
-console.log(process.env.PUBLIC_URL);
+console.log("PUBLIC", process.env.PUBLIC_URL);

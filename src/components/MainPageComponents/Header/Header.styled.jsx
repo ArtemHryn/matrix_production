@@ -1,16 +1,17 @@
-import styled from 'styled-components';
+import { Link } from "react-router-dom";
+import styled from "styled-components";
 
 export const Logo = styled.a`
-  font-family: ${p => p.theme.fonts.main};
+  font-family: ${(p) => p.theme.fonts.main};
   font-weight: 400;
   font-size: 38px;
   line-height: 27px;
 
   letter-spacing: 0.01em;
 
-  color: ${p => p.theme.colors.main};
+  color: ${(p) => p.theme.colors.main};
   margin-right: 74px;
-  @media screen and (min-width: ${p => p.theme.sizes.tablet}) {
+  @media screen and (min-width: ${(p) => p.theme.sizes.tablet}) {
     display: none;
   }
 `;
@@ -21,50 +22,50 @@ export const HeaderList = styled.ul`
   min-width: 500px;
   justify-content: center;
   align-items: center;
-  @media screen and (min-width: ${p => p.theme.sizes.tablet}) {
+  @media screen and (min-width: ${(p) => p.theme.sizes.tablet}) {
     min-width: 580px;
   }
-    @media screen and (min-width: ${p => p.theme.sizes.tablet}) {
+  @media screen and (min-width: ${(p) => p.theme.sizes.tablet}) {
     min-width: 635px;
   }
 `;
 
 export const HeaderListItem = styled.li`
   margin-right: 54px;
-  @media screen and (min-width: ${p => p.theme.sizes.tablet}) {
+  @media screen and (min-width: ${(p) => p.theme.sizes.tablet}) {
     margin-right: 35px;
     :last-child {
       margin-right: 0;
     }
   }
-  @media screen and (min-width: ${p => p.theme.sizes.desktop}) {
+  @media screen and (min-width: ${(p) => p.theme.sizes.desktop}) {
     margin-right: 43px;
   }
 `;
 
-export const HeaderLink = styled.a`
+export const HeaderLink = styled(Link)`
   display: flex;
   justify-content: center;
-  font-family: ${p => p.theme.fonts.main};
+  font-family: ${(p) => p.theme.fonts.main};
   font-weight: 400;
   font-size: 18px;
   line-height: 1.22;
   text-align: center;
   letter-spacing: 0.01em;
   width: 100px;
-  color: ${p => p.theme.colors.secondText};
+  color: ${(p) => p.theme.colors.secondText};
   padding: 16px 0;
   transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
   :hover,
   :focus {
     transform: scale(1.1);
-    color: ${p => p.theme.colors.main};
+    color: ${(p) => p.theme.colors.main};
   }
   :focus {
-    outline: 1px solid ${p => p.theme.colors.main};
+    outline: 1px solid ${(p) => p.theme.colors.main};
     border-radius: 5px;
   }
-  @media screen and (min-width: ${p => p.theme.sizes.desktop}) {
+  @media screen and (min-width: ${(p) => p.theme.sizes.desktop}) {
     width: 100%;
     font-size: 20px;
     padding: 26px 0;
