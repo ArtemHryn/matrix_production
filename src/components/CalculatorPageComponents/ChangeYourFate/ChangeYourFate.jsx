@@ -33,7 +33,7 @@ export const ChangeYourFate = () => {
         >
           <Box
             mb={['7px', '0px']}
-            py={[null, '42px', '36px']}
+            py={[null, '38px', '28px']}
             pl={[null, '40px', '66px']}
             pr={[null, '11px']}
             maxWidth={[null, '60%', '65%']}

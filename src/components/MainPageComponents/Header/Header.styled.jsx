@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const Logo = styled.a`
   font-family: ${(p) => p.theme.fonts.main};
@@ -43,7 +43,7 @@ export const HeaderListItem = styled.li`
   }
 `;
 
-export const HeaderLink = styled(Link)`
+const linkStyles = css`
   display: flex;
   justify-content: center;
   font-family: ${(p) => p.theme.fonts.main};
@@ -56,19 +56,30 @@ export const HeaderLink = styled(Link)`
   color: ${(p) => p.theme.colors.secondText};
   padding: 16px 0;
   transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
   :hover,
   :focus {
     transform: scale(1.1);
     color: ${(p) => p.theme.colors.main};
   }
+
   :focus {
     outline: 1px solid ${(p) => p.theme.colors.main};
     border-radius: 5px;
   }
+
   @media screen and (min-width: ${(p) => p.theme.sizes.desktop}) {
     width: 100%;
     font-size: 20px;
     padding: 26px 0;
     margin: 6px 0;
   }
+`;
+
+export const HeaderLink = styled.a`
+  ${linkStyles}
+`;
+
+export const HeaderRouterLink = styled(Link)`
+  ${linkStyles}
 `;
