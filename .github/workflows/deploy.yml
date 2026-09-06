@@ -1,43 +1,24 @@
-name: Darikarma
+name: Build and deploy to GitHub Pages
 
 on:
   push:
     branches: [main]
 
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
-
     steps:
-      - uses: actions/checkout@v6
+      - name: Checkout 🛎️
+        uses: actions/checkout@v2.3.1
 
-      - uses: actions/setup-node@v6
+      - name: Install, lint, build 🔧
+        run: |
+          npm install
+          npm run lint:js
+          npm run build
+
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@4.1.0
         with:
-          node-version: 20
-          cache: npm
-
-      - run: npm ci
-      - run: npm run build
-
-      - uses: actions/configure-pages@v5
-
-      - uses: actions/upload-pages-artifact@v4
-        with:
-          path: ./build
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-
-    steps:
-      - id: deployment
-        uses: actions/deploy-pages@v4
+          branch: gh-pages
+          folder: build
