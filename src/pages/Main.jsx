@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { Box } from 'components/Box';
 import { AboutKarma } from 'components/MainPageComponents/AboutKarma/AboutKarma';
-import { Author } from 'components/MainPageComponents/Author/Author';
+// import { Author } from 'components/MainPageComponents/Author/Author';
 import { CalculateYourMatrix } from 'components/MainPageComponents/CalculateYourMatrix/CalculateYourMatrix';
 import { CustomerReviewers } from 'components/MainPageComponents/CustomerReviewers/CustomerReviewers';
 import { Footer } from 'components/MainPageComponents/Footer/Footer';
@@ -45,7 +45,7 @@ const Main = () => {
         <Header navigationList={getNavCalList()} />
         <MainHero />
       </Box>
-      <Author />
+      {/* <Author /> */}
       <AboutKarma />
       <WhatIsMatrix />
       <MatrixPlusAndMinus />

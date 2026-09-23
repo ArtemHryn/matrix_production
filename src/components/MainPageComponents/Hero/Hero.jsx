@@ -1,6 +1,4 @@
 import { Box } from 'components/Box';
-import dariPhoto from 'images//hero/dariPhoto.webp';
-import dariPhotoTab from 'images/hero/DarinaInHero.webp';
 import dariPhotoDesk from 'images/hero/heroDariPhoto.webp';
 import heroStar from 'images//hero/hero_star.png';
 import {
@@ -19,39 +17,39 @@ export const MainHero = () => {
   const [clicked, setClicked] = useState(false);
   const { t } = useTranslation();
   return (
-    <Box as="section" py={['40px']}>
+    <Box as="section" py={["40px"]}>
       <Box
-        maxWidth={['400px', '768px', '1440px']}
-        px={['60px', '33px', '100px']}
+        maxWidth={["400px", "768px", "1440px"]}
+        px={["60px", "33px", "100px"]}
         m="0 auto"
-        display={[null, null, 'flex']}
+        display={[null, null, "flex"]}
         position="relative"
       >
-        <Box pt={[null, null, '124px']}>
+        <Box pt={[null, null, "124px"]}>
           <Box
-            display={[null, 'flex', 'flex']}
+            display={[null, "flex", "flex"]}
             flexDirection="column"
-            alignItems={['center', 'center', 'flex-start']}
-            mb={[null, null, '80px']}
+            alignItems={["center", "center", "flex-start"]}
+            mb={[null, null, "80px"]}
           >
-            <ProjectText>{t('projectText')}</ProjectText>
+            <ProjectText>{t("projectText")}</ProjectText>
             <Title>Dari.Karma</Title>
-            <MoveText>{t('heroChoose')}</MoveText>
+            <MoveText>{t("heroChoose")}</MoveText>
           </Box>
           <picture>
-            <source srcSet={dariPhotoTab} media="(min-width: 768px)" />
-            <source srcSet={dariPhoto} />
-            <Image srcSet={dariPhoto} alt="Дарина Дупак" />
+            <source srcSet={dariPhotoDesk} media="(min-width: 768px)" />
+            <source srcSet={dariPhotoDesk} />
+            <Image srcSet={dariPhotoDesk} alt="Дарина Дупак" />
           </picture>
-          <Box display={[null, 'flex', 'flex']}>
+          <Box display={[null, "flex", "flex"]}>
             <ServicesLink
               href="#4methods"
               onMouseEnter={() => setClicked(true)}
               clicked={clicked}
             >
-              {t('heroButton1')}
+              {t("heroButton1")}
             </ServicesLink>
-            <MatrxiLink to="calculator"> {t('heroButton2')}</MatrxiLink>
+            <MatrxiLink to="calculator"> {t("heroButton2")}</MatrxiLink>
           </Box>
         </Box>
         <Box
@@ -59,7 +57,7 @@ export const MainHero = () => {
           src={dariPhotoDesk}
           alt="Дарина Дупак"
           width="624"
-          display={['none', 'none', 'block']}
+          display={["none", "none", "block"]}
         />
         <ImgStar src={heroStar} alt="star" loading="lazy" />
       </Box>
