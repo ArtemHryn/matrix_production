@@ -4,7 +4,7 @@ import { List, Price, ServiceImage, Text, Title } from "./Card.styled";
 const Card = ({ card }) => {
   const { img, title, text, list, price } = card;
   console.log(card);
-
+  if (!card) return null;
   return (
     <>
       <ServiceImage src={img} alt={title} />

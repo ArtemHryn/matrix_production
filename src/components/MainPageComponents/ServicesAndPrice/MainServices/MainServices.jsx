@@ -1,15 +1,11 @@
 import { useTranslation } from "react-i18next";
 import Card from "./Card/Card";
 import { cards } from "../../../../helper/main/mainServices";
-import {
-  RedirectToBooking,
-  MainServicesList,
-  MainServicesListItem,
-} from "./MainServices.styled";
+import { MainServicesList, MainServicesListItem } from "./MainServices.styled";
 import { Box } from "../../../Box";
 
 const MainServices = () => {
-  const { i18n, t } = useTranslation();
+  const { i18n } = useTranslation();
   console.log(cards);
 
   return (
@@ -21,13 +17,13 @@ const MainServices = () => {
           </MainServicesListItem>
         ))}
       </MainServicesList>
-      <RedirectToBooking
+      {/* <RedirectToBooking
         href="https://t.me/DariKarma"
         target="_blank"
         rel="noreferrer noopener"
       >
         {t("services.buy_button")}
-      </RedirectToBooking>
+      </RedirectToBooking> */}
     </Box>
   );
 };
