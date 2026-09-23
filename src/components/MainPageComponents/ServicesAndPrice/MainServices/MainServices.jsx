@@ -10,6 +10,7 @@ import { Box } from "../../../Box";
 
 const MainServices = () => {
   const { i18n, t } = useTranslation();
+  console.log(cards);
 
   return (
     <Box display="flex" flexDirection="column" gridGap={["12px"]}>
