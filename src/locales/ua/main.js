@@ -84,7 +84,7 @@ const mainUa = {
   peopleAsk: "Мене часто запитують",
   FourLevels: "4  рівні матриці",
   aboutMethods: "Про метод",
-  services: { buy_button: "Записатися" },
+  buy_button: "Записатися",
 };
 
 export default mainUa;

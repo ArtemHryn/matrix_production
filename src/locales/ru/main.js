@@ -87,7 +87,7 @@ const mainRu = {
   peopleAsk: "Меня часто спрашивают",
   FourLevels: "4 уровня матрицы",
   aboutMethods: "О методе Матрицы",
-  services: { buy_button: "Записаться" },
+  buy_button: "Записаться",
 };
 
 export default mainRu;
