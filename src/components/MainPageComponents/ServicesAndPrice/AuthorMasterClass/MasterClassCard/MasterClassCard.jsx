@@ -1,32 +1,30 @@
-import { Box } from 'components/Box';
+import { Box } from "components/Box";
 import {
   Button,
   CardTitle,
   Img,
   MasterClassCardElement,
-  ServiceDuration,
-  ServiceFormat,
+  // ServiceDuration,
+  // ServiceFormat,
   ServiceList,
-  ServicePrice,
+  // ServicePrice,
   ServiceText,
   TitleContainer,
-} from './MasterClassCard.styled';
-import { useTranslation } from 'react-i18next';
+} from "./MasterClassCard.styled";
 
-const backgroundGradient =
-  'linear-gradient(to right,#000 10%, rgba(255, 255, 255, 0) 0%)';
+// const backgroundGradient =
+//   "linear-gradient(to right,#000 10%, rgba(255, 255, 255, 0) 0%)";
 
 export const MasterClassCard = ({
   title,
   img,
   services,
-  format,
-  duration,
-  price,
+  // format,
+  // duration,
+  // price,
   btn,
   link,
 }) => {
-  const { t } = useTranslation();
   return (
     <MasterClassCardElement>
       <Box>
@@ -43,7 +41,7 @@ export const MasterClassCard = ({
             </li>
           ))}
         </ServiceList>
-        <Box
+        {/* <Box
           mb={["34px", "34px", "50px"]}
           display={[null, null, "flex"]}
           backgroundImage={[null, null, backgroundGradient]}
@@ -60,7 +58,7 @@ export const MasterClassCard = ({
               </ServicePrice>
             )}
           </Box>
-        </Box>
+        </Box> */}
       </Box>
       <Button href={link} target="_blank" rel="noreferrer noopener">
         {btn}

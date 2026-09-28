@@ -47,16 +47,16 @@ export const Text = styled.p`
   line-height: 1.19;
 
   max-width: 320px;
-
+  white-space: pre-line;
   color: rgba(0, 0, 0, 0.8);
   ${space}
   ${layout}
-  @media screen and (min-width: ${p => p.theme.sizes.tablet}) {
+  @media screen and (min-width: ${(p) => p.theme.sizes.tablet}) {
     max-width: 100%;
     font-size: 17px;
     line-height: 1.23;
   }
-  @media screen and (min-width: ${p => p.theme.sizes.desktop}) {
+  @media screen and (min-width: ${(p) => p.theme.sizes.desktop}) {
     font-size: 18px;
   }
   ${typography}

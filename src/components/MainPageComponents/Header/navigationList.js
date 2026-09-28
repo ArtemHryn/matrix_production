@@ -1,7 +1,7 @@
 const getNavList = lng => {
   return lng === 'ua'
     ? [
-        { name: 'Автор', href: '#author' },
+        // { name: 'Автор', href: '#author' },
         { name: 'Про метод', href: '#aboutMatrix' },
         { name: 'Послуги', href: '#4methods' },
         { name: 'Відгуки', href: '#feedback' },
@@ -9,7 +9,7 @@ const getNavList = lng => {
         { name: 'Калькулятор', href: '/calculator' },
       ]
     : [
-        { name: 'Автор', href: '#author' },
+        // { name: 'Автор', href: '#author' },
         { name: 'О методе', href: '#aboutMatrix' },
         { name: 'Услуги', href: '#4methods' },
         { name: 'Отзывы', href: '#feedback' },

@@ -94,7 +94,7 @@ export const GameModal = () => {
                   <Text>
                     {t("game.groupGame")} -{" "}
                     <Text as="span" fontWeight="700">
-                      22&euro;/{t("game.person")}
+                      30&euro;/{t("game.person")}
                     </Text>
                   </Text>
                 </li>
@@ -102,7 +102,7 @@ export const GameModal = () => {
                   <Text>
                     {t("game.personalGame")} -{" "}
                     <Text as="span" fontWeight="700">
-                      45&euro;/{t("game.person")}
+                      50&euro;/{t("game.person")}
                     </Text>
                   </Text>
                 </li>
@@ -131,7 +131,7 @@ export const GameModal = () => {
                   <Text>
                     {t("game.personalGame")} -
                     <Text as="span" fontWeight="700">
-                      65&euro;/{t("game.person")}
+                      60&euro;/{t("game.person")}
                     </Text>
                   </Text>
                 </li>

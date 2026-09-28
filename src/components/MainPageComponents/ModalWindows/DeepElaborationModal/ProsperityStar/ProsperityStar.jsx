@@ -1,22 +1,21 @@
-import { useTranslation } from 'react-i18next';
-import { Box } from 'components/Box';
+import { useTranslation } from "react-i18next";
+import { Box } from "components/Box";
 import {
   AdditionalInfo,
   BuyButton,
   HowIsGoingConsultation,
   List,
-  ListTitle,
   MainTitle,
   Price,
   Requests,
   Text,
-} from './ProsperityStar.styled';
+} from "./ProsperityStar.styled";
 
 const dotGradient =
-  'linear-gradient( to right, #000 10%, rgba(255, 255,255, 0) 0% )';
+  "linear-gradient( to right, #000 10%, rgba(255, 255,255, 0) 0% )";
 
 export const ProsperityStar = () => {
-  const { t } = useTranslation('modals');
+  const { t } = useTranslation("modals");
   return (
     <>
       <MainTitle display={["none", "none", "block"]}>
@@ -39,8 +38,7 @@ export const ProsperityStar = () => {
           </Requests>
           <Text mb="15px">{t("prosperity.desc1")}</Text>
           <Text mb="15px">{t("prosperity.desc2")}</Text>
-          <Text mb="15px">{t("prosperity.desc3")}</Text>
-          <ListTitle>{t("prosperity.listTitle")}</ListTitle>
+          {/* <ListTitle>{t("prosperity.listTitle")}</ListTitle> */}
           <List>
             <li>
               <Text>{t("prosperity.listEl1")}</Text>
@@ -51,7 +49,14 @@ export const ProsperityStar = () => {
             <li>
               <Text>{t("prosperity.listEl3")}</Text>
             </li>
+            <li>
+              <Text>{t("prosperity.listEl4")}</Text>
+            </li>
+            <li>
+              <Text>{t("prosperity.listEl5")}</Text>
+            </li>
           </List>
+          <Text>{t("prosperity.desc3")}</Text>
         </Box>
         <Box>
           <Box

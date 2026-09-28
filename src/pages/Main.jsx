@@ -9,7 +9,7 @@ import { Footer } from 'components/MainPageComponents/Footer/Footer';
 import { FreeRecommendations } from 'components/MainPageComponents/FreeRecommendations/FreeRecommendations';
 import { MainHero } from 'components/MainPageComponents/Hero/Hero';
 import { ServicesAndPrice } from 'components/MainPageComponents/ServicesAndPrice/ServicesAndPrice';
-import { WaysToTransformation } from 'components/MainPageComponents/WaysToTransformation/WaysToTransformation';
+// import { WaysToTransformation } from 'components/MainPageComponents/WaysToTransformation/WaysToTransformation';
 import { WhatIsMatrix } from 'components/MainPageComponents/WhatIsMatrix/WhatIsMatrix';
 import { WhatPeopleAsk } from 'components/MainPageComponents/WhatPeopleAsk/WhatPeopleAsk';
 import backgroundFooterImage from 'images/backgroundPlanet.webp';
@@ -49,7 +49,7 @@ const Main = () => {
       <AboutKarma />
       <WhatIsMatrix />
       <MatrixPlusAndMinus />
-      <WaysToTransformation />
+      {/* <WaysToTransformation /> */}
       <ServicesAndPrice />
       <CustomerReviewers />
       <CalculateYourMatrix />

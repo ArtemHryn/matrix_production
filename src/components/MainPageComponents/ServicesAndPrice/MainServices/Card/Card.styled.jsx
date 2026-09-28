@@ -32,7 +32,7 @@ export const Text = styled.p`
   font-size: 16px;
   color: #494949;
   @media screen and (min-width: ${(p) => p.theme.sizes.tablet}) {
-    font-size: 20px;
+    font-size: 18px;
   }
 `;
 

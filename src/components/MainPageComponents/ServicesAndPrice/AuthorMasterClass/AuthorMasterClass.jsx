@@ -11,7 +11,7 @@ import getMasterClass from 'helper/masterClass';
 export const AuthorMasterClass = () => {
   const { i18n } = useTranslation();
   return (
-    <Box>
+    <Box >
       <AuthorMasterClassTitle>
         <Trans i18nKey="masterClassTitle">
           Авторские <SecondTitlePart>мастер-классы</SecondTitlePart>

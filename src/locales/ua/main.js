@@ -18,20 +18,20 @@ const mainUa = {
     "Здобула ступінь магістра психології в Національному університеті імені В. І. Вернадського",
   aboutAuthorWork6:
     "Вивчаю кармічний менеджмент і причинно-наслідкові зв'язки в Інституті Азійської Класики",
-  aboutKarmaTitle: "Що таке карма і як вона працює?",
-  aboutKarmaDesc1: "Вченню про карму понад 2,5 тисячі років",
-  aboutKarmaDesc2: "«Карма» в перекладі з санскриту означає «дія» або «вчинок»",
+  aboutKarmaTitle: "ТИ — і є справжня карма",
+  aboutKarmaDesc1:
+    "Карма — це хід твоїх думок, рух розуму, а не покарання чи «обратка».",
+  aboutKarmaDesc2:
+    "Алмазна мудрість — це система досягнення цілей через етичні та добрі вчинки.",
   aboutKarmaNearHands:
-    "Думки, слова, вчинки - це все дії, які ми здійснюємо щоденно.",
-  aboutKarmaTextUnderContainer:
-    "Всі вони неминуче призведуть до наслідків чи результатів. Ці результати формують наш подальший шлях і долю в цілому.",
-  aboutKarmaResultText: "Все приносить свої плоди!",
+    "Думки, слова, вчинки — усе це дії, які ти здійснюєш щодня, здебільшого навіть автоматично. І саме вони формують твоє сприйняття: хто для тебе «хороший» чи «поганий», а що — проблема чи можливість.",
+  aboutKarmaTextUnderContainer: "І це хороша новина, адже якщо так...",
+  aboutKarmaResultText: "Твоя доля справді у твоїх руках!",
   whatIsMatrixTitle1: "Що таке",
   whatIsMatrixTitle2: "Матриця Долі?",
-  whatIsMatrixMatrixCreator:
-    "Авторський метод Наталії Ладіні, якому вже понад 16 років",
+  whatIsMatrixMatrixCreator: "Метод Наталії Ладіні, якому понад 20 років.",
   whatIsMatrixAboutMethod:
-    "Цей метод фактично є відображенням вашої карми, а також унікальним інструментом для діагностики призначення, зцілення душі, розуму і тіла",
+    "Цей метод фактично є дзеркалом ваших життєвих сценаріїв, відображених у 22 архетипах. Це унікальний інструмент для дослідження призначення та корекції життя через вчинки й нові звички.",
   whatIsMatrixLinkToCalculator: "Розрахувати матрицю",
   matrixMinusAndPlusTitle1: "Матриця в мінусі",
   matrixMinusAndPlusTitle2: "Матриця в плюсі",
@@ -59,32 +59,36 @@ const mainUa = {
   waysToTransformationTransformationWayText4:
     "Відстеження процесу трансформації за допомогою точок контролю між етапами у форматі дзвінків",
   ServicesAndPriceTitle: "Послуги",
-  ServicesAndPriceFourStages: "Глибинна робота: 4 рівні матриці",
+  ServicesTypesInfo:
+    "Ці три формати консультацій підходять для будь-якого запиту. Просто обирай формат, у якому готовий працювати, і приходь. Усе інше, від інструментів до необхідних розрахунків, підберу я.",
+  ServicesAndPriceFourStages: "Матриця Долі: всі рівні оригінального методу",
   ServicesAndPriceWarning: "*Кожен рівень опрацьовується послідовно",
   ServicesAndPriceDetail: "Детальніше",
   ServicesAndPriceConsultationsIndividualRequest:
     "Також можна розібрати будь-яку іншу тему за індивідуальним запитом.",
-  ServicesAndPriceConsultationsTitle: "Консультації",
+  ServicesAndPriceConsultationsTitle: "Особливі формати",
   ServicesAndPriceExpressServicesTitle: "Експрес-послуги",
   ServicesAndPriceExpressServicesAdditionalInfo1:
     "Також ви можете подарувати своїм близьким",
   ServicesAndPriceExpressServicesAdditionalInfo2: "на будь-яку послугу.",
   ServicesAndPriceExpressServicesCert: "сертифікат",
-  masterClassTitle: "Авторські <1>майстер-класи</1>",
+  masterClassTitle: "Матеріали для <1>самостійної роботи</1>",
   cost: "Вартість:",
   feedback: "Відгуки",
   feedbackDesc: "Я з радістю стану твоїм провідником у новий етап твого життя!",
+  moreFeedbacks: 'Більше відгуків',
   calculate: "Дізнайся",
   yourMatrix: "свою Матрицю Долі",
-  aboutCalc: "Поглиблений калькулятор для швидкого та професійного розрахунку.",
+  aboutCalc:
+    "Отримай правильний розрахунок за оригінальним методом Наталії Ладіні – від базової Матриці до глибинних рівнів.",
   infoAboutCalc:
     "* Калькулятор на 100% відповідає класичному обчисленню «Матриця Долі» Наталії Ладіні",
   calcBtn: "Розрахувати",
   freeRecommendationTitle: "Багато корисної інформації у моїх соц.мережах:",
   peopleAsk: "Мене часто запитують",
-  FourLevels: "4  рівні матриці",
-  aboutMethods: "Про метод",
-  buy_button: "Записатися",
+  FourLevels: "Послуги",
+  aboutMethods: "Про матрицю",
+  services: { buy_button: "Записатися", include: "Включає" },
 };
 
 export default mainUa;

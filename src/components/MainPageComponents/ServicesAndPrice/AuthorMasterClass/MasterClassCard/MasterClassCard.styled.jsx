@@ -68,6 +68,7 @@ export const CardTitle = styled.h4`
   @media screen and (min-width: ${p => p.theme.sizes.desktop}) {
     padding-top: 34px;
     padding-bottom: 34px;
+    font-size: 32px;
   }
 `;
 

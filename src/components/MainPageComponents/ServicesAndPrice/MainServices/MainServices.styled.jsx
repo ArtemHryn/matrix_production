@@ -18,9 +18,9 @@ export const MainServicesListItem = styled.li`
   flex-direction: column;
   border-radius: 30px;
   background: #fff;
-  max-width: 332px;
+  max-width: 352px;
   border: 1px solid #eac8ef;
-  padding: 0px 20px 40px;
+  padding: 0px 32px 40px;
   @media screen and (min-width: ${(p) => p.theme.sizes.desktop}) {
     height: min-content;
   }

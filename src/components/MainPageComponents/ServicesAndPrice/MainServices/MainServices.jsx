@@ -25,7 +25,7 @@ const MainServices = () => {
         target="_blank"
         rel="noreferrer noopener"
       >
-        {t("buy_button")}
+        {t("services.buy_button")}
       </RedirectToBooking>
     </Box>
   );

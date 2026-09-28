@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const FactElement = styled.li`
   position: relative;
@@ -10,7 +10,7 @@ export const FactElement = styled.li`
   border-radius: 30px;
   overflow: hidden;
 
-  @media screen and (min-width: ${p => p.theme.sizes.tablet}) {
+  @media screen and (min-width: ${(p) => p.theme.sizes.tablet}) {
     width: calc((100% - 18px) / 3);
     margin-bottom: 0;
     margin-right: 9px;
@@ -20,7 +20,7 @@ export const FactElement = styled.li`
     margin-bottom: 0;
     margin-right: 0px;
   }
-  @media screen and (min-width: ${p => p.theme.sizes.tablet}) {
+  @media screen and (min-width: ${(p) => p.theme.sizes.tablet}) {
     padding: 115px 28px 47px 28px;
   }
 `;
@@ -41,21 +41,28 @@ export const FactTitle = styled.h3`
   font-weight: 400;
   font-size: 30px;
   line-height: 1.2;
+  text-wrap: balance;
 
   letter-spacing: 0.01em;
 
-  width: 50%;
+  width: 60%;
+
   padding-bottom: 30px;
 
   color: #72499b;
-  
+  @media screen and (min-width: ${(p) => p.theme.sizes.tablet}) {
+    width: 100%;
+  }
+  @media screen and (min-width: ${(p) => p.theme.sizes.desktop}) {
+    width: 50%;
+  }
 `;
 
 export const Img = styled.img`
   position: absolute;
   top: 0%;
   right: 0%;
-  @media screen and (min-width: ${p => p.theme.sizes.desktop}) {
+  @media screen and (min-width: ${(p) => p.theme.sizes.desktop}) {
     width: 60%;
   }
 `;
@@ -64,12 +71,12 @@ export const OneFact = styled.p`
   font-size: 18px;
   line-height: 1.33;
 
-  color: ${p => p.theme.colors.third};
+  color: ${(p) => p.theme.colors.third};
 
-  @media screen and (min-width: ${p => p.theme.sizes.tablet}) {
+  @media screen and (min-width: ${(p) => p.theme.sizes.tablet}) {
     padding-top: 32px;
   }
-  @media screen and (min-width: ${p => p.theme.sizes.desktop}) {
+  @media screen and (min-width: ${(p) => p.theme.sizes.desktop}) {
     font-size: 20px;
     line-height: 1.2;
   }

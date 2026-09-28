@@ -1,34 +1,35 @@
-import { useTranslation } from 'react-i18next';
-import { Box } from 'components/Box';
-import { ConsultaionCard } from './ConsultationCard/ConsultationCard';
+import { useTranslation } from "react-i18next";
+import { Box } from "components/Box";
+import { ConsultaionCard } from "./ConsultationCard/ConsultationCard";
 import {
   ConsultationsList,
   ConsultationsTitle,
-  ContactMeSocial,
-  IndividualRequestElement,
-  IndividualRequestTitle,
-} from './Consultations.styled';
+  // ContactMeSocial,
+  // IndividualRequestElement,
+  // IndividualRequestTitle,
+} from "./Consultations.styled";
 
-import { getConsultationCardsList } from './consultationInfo';
+import { getConsultationCardsList } from "./consultationInfo";
 
 export const Consultations = () => {
   const { i18n, t } = useTranslation();
   return (
-    <Box mb={'68px'}>
+    <Box mb={"68px"}>
       <Box
-        display={[null, 'flex', 'flex']}
-        alignItems={[null, 'center']}
-        justifyContent={[null, 'space-between', 'space-between']}
+        display={[null, "flex", "flex"]}
+        alignItems={[null, "center"]}
+        justifyContent={[null, "space-between", "space-between"]}
+        id="special-formats"
       >
         <ConsultationsTitle>
-          {t('ServicesAndPriceConsultationsTitle')}:
+          {t("ServicesAndPriceConsultationsTitle")}:
         </ConsultationsTitle>
       </Box>
       <ConsultationsList>
-        {getConsultationCardsList(i18n.language).map(card => (
+        {getConsultationCardsList(i18n.language).map((card) => (
           <ConsultaionCard key={card.text} card={card} />
         ))}
-        <IndividualRequestElement>
+        {/* <IndividualRequestElement>
           <IndividualRequestTitle>
             {t('ServicesAndPriceConsultationsIndividualRequest')}
           </IndividualRequestTitle>
@@ -48,7 +49,7 @@ export const Consultations = () => {
               Telegram
             </ContactMeSocial>
           </Box>
-        </IndividualRequestElement>
+        </IndividualRequestElement> */}
       </ConsultationsList>
     </Box>
   );

@@ -1,6 +1,7 @@
 import { Box } from "components/Box";
 
 import {
+  FormatTypes,
   FourStagesTitle,
   ServiceAndPriceTitle,
   ServiceWarning,
@@ -32,9 +33,13 @@ export const ServicesAndPrice = () => {
         flexDirection="column"
         gridGap={["60px"]}
       >
-        <ServiceAndPriceTitle>
-          {t("ServicesAndPriceTitle")}
-        </ServiceAndPriceTitle>
+        <Box display="flex" flexDirection="column" gridGap={["8px", "16px"]}>
+          <ServiceAndPriceTitle>
+            {t("ServicesAndPriceTitle")}
+          </ServiceAndPriceTitle>
+          <FormatTypes>{t("ServicesTypesInfo")}</FormatTypes>
+        </Box>
+
         <MainServices />
         <Box>
           <FourStagesTitle>{t("ServicesAndPriceFourStages")}</FourStagesTitle>

@@ -1,7 +1,9 @@
+import { useTranslation } from "react-i18next";
 import { Box } from "../../../../Box";
 import { List, Price, ServiceImage, Text, Title } from "./Card.styled";
 
 const Card = ({ card }) => {
+  const { t } = useTranslation();
   const { img, title, text, list, price } = card;
   return (
     <>
@@ -15,7 +17,7 @@ const Card = ({ card }) => {
         <Title>{title}</Title>
         <Text>{text}</Text>
         <Box>
-          <Text>Включає</Text>
+          <Text>{t("services.include")}:</Text>
           <List>
             {list.map((t, i) => (
               <li key={i}>
