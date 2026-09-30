@@ -83,7 +83,7 @@ const calcUa = {
   instructionCircleBtn2: "Безкоштовні вебінари про “INTEGRITY”",
   instructionBtn1: "Відеоінструкція до калькулятора",
   instructionBtn2: "Безкоштовні вебінари про “INTEGRITY”",
-  instructionModalTitle1: "Відеоінструкція",
+  instructionModalTitle1: "Секретні фішки калькулятора",
   instructionModalTitle2: 'Вебінари про систему "INTEGRITY"',
   instructionModalBtn1: "купити інструкцію",
   instructionModalBtn2: "Дивитися безкоштовно",

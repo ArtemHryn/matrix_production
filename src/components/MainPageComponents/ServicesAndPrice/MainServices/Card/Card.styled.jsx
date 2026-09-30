@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const ServiceImage = styled.img`
   width: 300px;
-  height: 195px;
+  height: 129px;
 `;
 
 export const Title = styled.h3`

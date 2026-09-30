@@ -72,7 +72,7 @@ export const OneFact = styled.p`
   line-height: 1.33;
 
   color: ${(p) => p.theme.colors.third};
-
+  padding-top: 16px;
   @media screen and (min-width: ${(p) => p.theme.sizes.tablet}) {
     padding-top: 32px;
   }

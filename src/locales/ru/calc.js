@@ -82,7 +82,7 @@ const calcRu = {
   instructionCircleBtn2: 'Бесплатные вебинары об "INTEGRITY"',
   instructionBtn1: "Видеоинструкция к калькулятору",
   instructionBtn2: 'Бесплатные вебинары об "INTEGRITY"',
-  instructionModalTitle1: "Видеоинструкция",
+  instructionModalTitle1: "Секретные фишки калькулятора",
   instructionModalTitle2: 'Вебинары по системе "INTEGRITY"',
   instructionModalBtn1: "купить инструкцию",
   instructionModalBtn2: "Смотреть бесплатно",
