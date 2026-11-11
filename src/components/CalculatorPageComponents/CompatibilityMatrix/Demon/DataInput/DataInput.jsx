@@ -1,27 +1,28 @@
-import { useForm, Controller } from 'react-hook-form';
-import { useTranslation } from 'react-i18next';
+import { useForm, Controller } from "react-hook-form";
+import { useTranslation } from "react-i18next";
 
-import { useMatrix } from 'pages/Calculator';
+import { useMatrix } from "pages/Calculator";
 
-import { Box } from 'components/Box';
-import DataInputContainer from 'components/Common/DataInputContainer/DataInputContainer';
-import { Input } from '../../Team/DataInput/InputLine/InputLine.styled';
-import { Error } from 'components/CalculatorPageComponents/PersonalMatrix/DataInput/DataByDate/DataByDate.styled';
+import { Box } from "components/Box";
+import DataInputContainer from "components/Common/DataInputContainer/DataInputContainer";
+import { Input } from "../../Team/DataInput/InputLine/InputLine.styled";
+import { Error } from "components/CalculatorPageComponents/PersonalMatrix/DataInput/DataByDate/DataByDate.styled";
 
-import './input.css';
-import { DropDownLib } from './DataInputDemon.styled';
+import "./input.css";
+import { DropDownLib } from "./DataInputDemon.styled";
 
 const DataInputDemon = ({ setIsFullOverlap, setIsMethod2023 }) => {
-  const { t } = useTranslation('calc');
+  const { t } = useTranslation("calc");
   const { setPartnersDate, setShowMatrix } = useMatrix();
 
   const matrixes = [
-    { name: '12 код', code: '12' },
-    { name: '13 код', code: '13' },
-    { name: '14 код', code: '14' },
-    { name: '15 код', code: '15' },
-    { name: '4 $', code: 'm' },
-    { name: '3 $', code: 'w' },
+    { name: "12 код", code: "12" },
+    { name: "13 код", code: "13" },
+    { name: "14 код", code: "14" },
+    { name: "15 код", code: "15" },
+    { name: "18 код", code: "18" },
+    { name: "4 $", code: "m" },
+    { name: "3 $", code: "w" },
   ];
   const {
     register,
@@ -31,23 +32,26 @@ const DataInputDemon = ({ setIsFullOverlap, setIsMethod2023 }) => {
     formState: { errors },
   } = useForm();
 
-  const onChange = e => {
-    let inputDate = e.target.value.replace(/\D/g, '');
+  const onChange = (e) => {
+    let inputDate = e.target.value.replace(/\D/g, "");
     if (inputDate.length > 8) {
       inputDate = inputDate.substr(0, 8);
     }
     if (inputDate.length > 4) {
-      inputDate = inputDate.substr(0, 4) + '.' + inputDate.substr(4);
+      inputDate = inputDate.substr(0, 4) + "." + inputDate.substr(4);
     }
     if (inputDate.length > 2) {
-      inputDate = inputDate.substr(0, 2) + '.' + inputDate.substr(2);
+      inputDate = inputDate.substr(0, 2) + "." + inputDate.substr(2);
     }
-    setValue('date', inputDate);
+    setValue("date", inputDate);
   };
 
-  const onSubmitForm = data => {
-    const [day, month, year] = data.date.split('.');
-    setPartnersDate([{ day, month, year, name: data.name }, { demonMatrix: data.demonMatrix }]);
+  const onSubmitForm = (data) => {
+    const [day, month, year] = data.date.split(".");
+    setPartnersDate([
+      { day, month, year, name: data.name },
+      { demonMatrix: data.demonMatrix },
+    ]);
     setShowMatrix(true);
     setIsFullOverlap(data.isFullOverlap);
     setIsMethod2023(data.method2023);
@@ -61,18 +65,18 @@ const DataInputDemon = ({ setIsFullOverlap, setIsMethod2023 }) => {
       setValue={setValue}
       control={control}
     >
-      <Box display="flex" flexWrap="wrap" gridGap={['6px']}>
+      <Box display="flex" flexWrap="wrap" gridGap={["6px"]}>
         <Input
           type="text"
-          width={['calc((100% - 12px) / 2)', null, 'calc((100% - 12px) / 2)']}
-          placeholder={t('personalMatrixNamePlaceholder')}
-          mb={['5px']}
-          {...register('name')}
+          width={["calc((100% - 12px) / 2)", null, "calc((100% - 12px) / 2)"]}
+          placeholder={t("personalMatrixNamePlaceholder")}
+          mb={["5px"]}
+          {...register("name")}
         />
         <Controller
           name="demonMatrix"
           control={control}
-          defaultValue={'12'}
+          defaultValue={"12"}
           render={({ field, fieldState }) => (
             <DropDownLib
               id={field.name}
@@ -81,23 +85,23 @@ const DataInputDemon = ({ setIsFullOverlap, setIsMethod2023 }) => {
               optionLabel="name"
               placeholder="Select a City"
               options={matrixes}
-              onChange={e => field.onChange(e.value)}
+              onChange={(e) => field.onChange(e.value)}
             />
           )}
         />
         <Input
-          width={['100%', null, '100%']}
+          width={["100%", null, "100%"]}
           type="text"
-          placeholder={t('personalMatrixDatePlaceholder')}
-          {...register('date', {
+          placeholder={t("personalMatrixDatePlaceholder")}
+          {...register("date", {
             onChange: onChange,
             required: {
               value: true,
-              message: t('personalMatrixDateRequired'),
+              message: t("personalMatrixDateRequired"),
             },
             pattern: {
               value: /^\d{2}\.\d{2}\.\d{4}$/,
-              message: t('personalMatrixDatePattern'),
+              message: t("personalMatrixDatePattern"),
             },
           })}
         />

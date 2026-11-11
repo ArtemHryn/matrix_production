@@ -1,4 +1,4 @@
-import { allData } from './calculateMatrix';
+import { allData } from "./calculateMatrix";
 
 const demon12 = {
   topLeft1: 3,
@@ -47,6 +47,17 @@ const demon15 = {
   bottom1: 5,
   bottomRight1: 6,
 };
+const demon18 = {
+  topLeft1: 9,
+  month: 9,
+  topRight1: 18,
+  day: 10,
+  center: 17,
+  year: 9,
+  bottomLeft1: 1,
+  bottom1: 8,
+  bottomRight1: 9,
+};
 
 const manMoney = {
   topLeft1: 3,
@@ -71,19 +82,21 @@ const womanMoney = {
   bottomRight1: 7,
 };
 
-export const getStaticDemonMatrix = number => {
+export const getStaticDemonMatrix = (number) => {
   switch (number) {
-    case '12':
+    case "12":
       return allData({ date: demon12, isGenerated: true });
-    case '13':
+    case "13":
       return allData({ date: demon13, isGenerated: true });
-    case '14':
+    case "14":
       return allData({ date: demon14, isGenerated: true });
-    case '15':
+    case "15":
       return allData({ date: demon15, isGenerated: true });
-    case 'm':
+    case "18":
+      return allData({ date: demon18, isGenerated: true });
+    case "m":
       return allData({ date: manMoney, isGenerated: true });
-    case 'w':
+    case "w":
       return allData({ date: womanMoney, isGenerated: true });
     default:
       break;

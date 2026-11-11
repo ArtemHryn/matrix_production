@@ -50,9 +50,9 @@ const calcUa = {
   healthAuthorPasswordModalData: "Введіть ключ доступу",
   incorrectPassword: "! Невірний пароль",
   healthAuthorWarning1:
-    '<0>УВАГА!</0> Система "INTEGRITY" є розробкою команди "Dari.Karma" та представлена на сайті для тестування.',
+    '<warning>УВАГА!</warning> Система "INTEGRITY" є розробкою команди "Dari.Karma" та представлена на сайті для тестування.',
   healthAuthorWarning2:
-    "Даний розрахунок карти здоров'я <1>не відповідає </1> алгоритму розрахунку Н. Ладіні",
+    "Даний розрахунок карти здоров'я <warning>відповідає</warning> алгоритму розрахунку Н. Ладіні, проте <warning>розташування чакр змінено.</warning>",
   healthCardTypePersonal: "Класична",
   healthCardTipPurpose: "Функція",
   healthCardTipInternalCondition: "Внутрішній стан",

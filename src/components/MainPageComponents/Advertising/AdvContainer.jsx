@@ -6,9 +6,10 @@ const AdvContainer = () => {
   const location = useLocation();
   const params = new URLSearchParams(location.search);
   const type = params.get("type");
-  const showAdv = Math.random() < 0.7;
+  const showAdv = Math.random() < 0.2;
 
-  if (type === "year_matrix") return <AdvForPeriodLesson />;
+  if (type === "year_matrix" || type === "prognostic")
+    return <AdvForPeriodLesson />;
 
   return <>{showAdv ? <AdvForPeriodLesson /> : <Advertising />}</>;
 };

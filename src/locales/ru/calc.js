@@ -49,9 +49,9 @@ const calcRu = {
   healthAuthorPasswordModalData: "Введите ключ доступа",
   incorrectPassword: "! Неверный пароль",
   healthAuthorWarning1:
-    '<0>ВНИМАНИЕ!</0> Система "INTEGRITY" является разработкой команды "Dari.Karma" и представлена на сайте для тестирования.',
+    '<warning>ВНИМАНИЕ!</warning> Система "INTEGRITY" является разработкой команды "Dari.Karma" и представлена на сайте для тестирования.',
   healthAuthorWarning2:
-    "Данный расчёт карты здоровья <1>не соответствует </1> алгоритму расчёта Н. Ладини",
+    "Данный расчёт карты здоровья <warning>соответствует</warning> алгоритму расчёта Н. Ладини, однако <warning>расположение чакр изменено.</warning>",
   healthCardTypePersonal: "Классическая",
   healthCardTipPurpose: "Функция",
   healthCardTipInternalCondition: "Внутреннее состояние",

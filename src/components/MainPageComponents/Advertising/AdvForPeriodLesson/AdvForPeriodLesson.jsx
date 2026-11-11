@@ -23,7 +23,7 @@ const AdvForPeriodLesson = () => {
   const [visible, setVisible] = useState(false);
 
   const now = new Date();
-  const cutoff = new Date("2026-05-15T00:00:00");
+  const cutoff = new Date("2027-02-28T00:00:00");
 
   useEffect(() => {
     const closedAt = localStorage.getItem("closedAt");
@@ -68,7 +68,7 @@ const AdvForPeriodLesson = () => {
       <About>Всё плохое — это просто нереализованное хорошее!</About>
       <TextContainer>
         <Title>
-          <span>ВСЕ СЕКРЕТЫ</span> ПРОГНОЗА НА 2026
+          <span>ВСЕ СЕКРЕТЫ</span> ПРОГНОЗА НА 2027
         </Title>
         <Desc>
           как не терять себя в сложные моменты И САМОСТОЯТЕЛЬНО КОРРЕКТИРОВАТЬ

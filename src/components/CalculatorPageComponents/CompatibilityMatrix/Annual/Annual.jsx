@@ -1,23 +1,33 @@
-import { useEffect, useState } from 'react';
-import { useTranslation } from 'react-i18next';
-import { allData, getCompatData } from 'helper/calculateMatrix';
-import { useMatrix } from 'pages/Calculator';
-import DataInput from './DataInput/DataInput';
-import { Box } from 'components/Box';
-import ResultMatrix from '../Partners/ResultMatrix/ResultMatrix';
-import PartnerMatrix from '../Partners/PartnerMatrix/PartnerMatrix';
-import { ReactComponent as Matrix } from 'images/Calculator/AnnualMatrix/yearResultMatrix.svg';
-import AnnualPeriodTable from './AnnualPeriodTable/AnnualPeriodTable';
+import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
+import {
+  allData,
+  authorHealthCard,
+  getCompatData,
+  getHealthInfo,
+} from "helper/calculateMatrix";
+import { useMatrix } from "pages/Calculator";
+import DataInput from "./DataInput/DataInput";
+import { Box } from "components/Box";
+import ResultMatrix from "../Partners/ResultMatrix/ResultMatrix";
+import PartnerMatrix from "../Partners/PartnerMatrix/PartnerMatrix";
+import { ReactComponent as Matrix } from "images/Calculator/AnnualMatrix/yearResultMatrix.svg";
+import AnnualPeriodTable from "./AnnualPeriodTable/AnnualPeriodTable";
+import HealthCard from "../../PersonalMatrix/MatrixCalculation/HealthMatrix/HealthTables/HealthCard/HealthCard";
+import HealthCardBtnChange from "../../PersonalMatrix/MatrixCalculation/HealthMatrix/HealthTables/HealthCardBtnChange/HealthCardBtnChange";
 
 const Annual = () => {
   const { partnersDate, showMatrix } = useMatrix();
-  const { t } = useTranslation('calc');
+  const { t, i18n } = useTranslation("calc");
 
   const [isMethod2023, setIsMethod2023] = useState(false);
   const [resultData, setResultData] = useState();
   const [annualMatrixData, setAnnualMatrixData] = useState([]);
   const [tableInfo, setTableInfo] = useState([]);
   const [isFullOverlap, setIsFullOverlap] = useState(false);
+  const [healthTable, setHealthTable] = useState([]);
+  const [authorMethod, setAuthorMethod] = useState([]);
+  const [cardType, setCardType] = useState(2);
 
   useEffect(() => {
     if (partnersDate === 0) {
@@ -25,20 +35,32 @@ const Annual = () => {
     }
     const partners = [];
     partnersDate.forEach((element, index) => {
-      const partnerInfo = allData({ date: element, isGenerated: element.isGenerated });
-      partnerInfo.order = `${t('tableMatrix')} ${index + 1}`;
+      const partnerInfo = allData({
+        date: element,
+        isGenerated: element.isGenerated,
+      });
+      partnerInfo.order = `${t("tableMatrix")} ${index + 1}`;
       partners.push(partnerInfo);
     });
     setAnnualMatrixData(partners);
   }, [partnersDate, t]);
 
   useEffect(() => {
-    setResultData(getCompatData(annualMatrixData, isFullOverlap, isMethod2023));
-  }, [annualMatrixData, isFullOverlap, isMethod2023]);
+    const result = getCompatData(annualMatrixData, isFullOverlap, isMethod2023);
+    setResultData(result);
+
+    setHealthTable(getHealthInfo(result, i18n.language));
+    setAuthorMethod(authorHealthCard(result, i18n.language));
+  }, [annualMatrixData, i18n.language, isFullOverlap, isMethod2023]);
+
+  console.log(authorMethod);
 
   return (
     <Box>
-      <DataInput setIsFullOverlap={setIsFullOverlap} setIsMethod2023={setIsMethod2023} />
+      <DataInput
+        setIsFullOverlap={setIsFullOverlap}
+        setIsMethod2023={setIsMethod2023}
+      />
       {showMatrix && (
         <>
           <ResultMatrix
@@ -47,18 +69,41 @@ const Annual = () => {
             isAnual={true}
             yearArcanes={tableInfo.filter((element, index) => index % 2 !== 0)}
           />
-          <AnnualPeriodTable
-            resultData={resultData}
-            matrixYear={partnersDate[1].year}
-            tableInfo={tableInfo}
-            setTableInfo={setTableInfo}
-          />
           <Box
-            display={['flex']}
-            flexDirection={['column', 'column', 'row']}
+            margin="0 auto"
+            mb={["40px", "70px", "110px"]}
+            display={["flex"]}
+            flexDirection={["column"]}
+            maxWidth="900px"
+            alignItems={"center"}
+            justifyContent={["center"]}
+            gridGap={["40px", "70px", "110px"]}
+          >
+            <AnnualPeriodTable
+              resultData={resultData}
+              matrixYear={partnersDate[1].year}
+              tableInfo={tableInfo}
+              setTableInfo={setTableInfo}
+            />
+            <Box>
+              <HealthCardBtnChange
+                cardType={cardType}
+                setCardType={setCardType}
+              />
+              {healthTable.length > 0 && cardType === 1 && (
+                <HealthCard card={healthTable[0]} />
+              )}
+              {authorMethod.length > 0 && cardType === 2 && (
+                <HealthCard card={authorMethod[0]} />
+              )}
+            </Box>
+          </Box>
+          <Box
+            display={["flex"]}
+            flexDirection={["column", "column", "row"]}
             justifyContent="center"
-            gridGap={["20px",'40px']}
-            mb={['60px', '70px']}
+            gridGap={["20px", "40px"]}
+            mb={["60px", "70px"]}
           >
             {annualMatrixData.map((partner, index) => (
               <PartnerMatrix
