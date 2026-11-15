@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.js": "/static/js/main.1926505e.js",
+    "main.js": "/static/js/main.e5ea6dd5.js",
     "static/js/483.cc0e567c.chunk.js": "/static/js/483.cc0e567c.chunk.js",
     "static/js/550.d0bbddcc.chunk.js": "/static/js/550.d0bbddcc.chunk.js",
     "static/js/495.a61eca37.chunk.js": "/static/js/495.a61eca37.chunk.js",
@@ -77,7 +77,6 @@
     "static/media/matrixTemplate.webp": "/static/media/matrixTemplate.00d25259b69eea12c29b.webp",
     "static/media/table.webp": "/static/media/table.73b88491ebf7432f7fb8.webp",
     "static/media/card3.webp": "/static/media/card3.e3bf8369e68c6887727b.webp",
-    "static/media/matrix.webp": "/static/media/matrix.d36fac5d853a9c9470b9.webp",
     "static/media/Phones.webp": "/static/media/Phones.88584d21cb6f761c466c.webp",
     "static/media/lock.svg": "/static/media/lock.60fd0623ea3a4a8de6151e6947531fc9.svg",
     "static/media/card1.webp": "/static/media/card1.82966fc8ee84a4532402.webp",
@@ -106,7 +105,6 @@
     "static/media/handsDesc.webp": "/static/media/handsDesc.61309ac681b3c95f9db5.webp",
     "static/media/goldenSeparator.png": "/static/media/goldenSeparator.b50ca40febcba8e1daf3.png",
     "static/media/rising_star.svg": "/static/media/rising_star.8ae87eb0cc2e9946e08d7c60bf63201a.svg",
-    "static/media/advertising.webp": "/static/media/advertising.c03f126c4c8490de1d27.webp",
     "static/media/pazzles.webp": "/static/media/pazzles.e563302ffb0daa5930c0.webp",
     "static/media/handsTab.webp": "/static/media/handsTab.f412893ee136d5b26fe3.webp",
     "static/media/handsLineDesc.png": "/static/media/handsLineDesc.1bc4b90f1ed6e1ec1d36.png",
@@ -160,7 +158,7 @@
     "static/media/closeModal.svg": "/static/media/closeModal.77f566a13863502e75085358a5296aff.svg",
     "static/media/menuButton.svg": "/static/media/menuButton.6543f21211fdf3fdf52f174cb0d6e241.svg",
     "static/media/plus.svg": "/static/media/plus.8d6f5f239025f72163429b7dffd2d420.svg",
-    "main.1926505e.js.map": "/static/js/main.1926505e.js.map",
+    "main.e5ea6dd5.js.map": "/static/js/main.e5ea6dd5.js.map",
     "483.cc0e567c.chunk.js.map": "/static/js/483.cc0e567c.chunk.js.map",
     "550.d0bbddcc.chunk.js.map": "/static/js/550.d0bbddcc.chunk.js.map",
     "495.a61eca37.chunk.js.map": "/static/js/495.a61eca37.chunk.js.map",
@@ -193,6 +191,6 @@
     "502.46b97538.chunk.js.map": "/static/js/502.46b97538.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.1926505e.js"
+    "static/js/main.e5ea6dd5.js"
   ]
 }
